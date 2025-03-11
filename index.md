@@ -1,6 +1,4 @@
-# Michael Kotlikov's Blog
-
-Welcome to my blog where I share thoughts and insights about technology, software development, and more.
+Thoughts and insights about technology, software development, and more.
 
 ## Latest Posts
 
