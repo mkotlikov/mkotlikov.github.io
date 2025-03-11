@@ -4,7 +4,7 @@ description: Thoughts and insights about technology and software development
 author: Michael Kotlikov
 
 # Build settings
-theme: jekyll-theme-minimal  # This is one of GitHub's supported themes
+theme: jekyll-theme-primer  # Changed to a theme without sidebar
 markdown: kramdown          # The markdown processor
 permalink: /posts/:year-:month-:day-:title  # URL structure for posts
 
