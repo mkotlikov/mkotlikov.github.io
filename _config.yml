@@ -1,0 +1,15 @@
+# Site settings
+title: Michael Kotlikov's Blog
+description: Thoughts and insights about technology and software development
+author: Michael Kotlikov
+
+# Build settings
+theme: jekyll-theme-minimal  # This is one of GitHub's supported themes
+markdown: kramdown          # The markdown processor
+permalink: /posts/:year-:month-:day-:title  # URL structure for posts
+
+# Optional settings
+timezone: UTC
+encoding: utf-8
+future: true      # Allow posts with future dates to be shown
+show_excerpts: true  # Show post excerpts on the home page
