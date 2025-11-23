@@ -2,6 +2,13 @@ Thoughts and insights about technology, software development, and more.
 
 ## Latest Posts
 
+### The Great "Tronics" Mania: A Warning on the EDP Delusion
+*Sensible Business Analyst - November 1965*
+
+An on-the-ground critique of 1960s EDP speculation, calling out the costs, infrastructure demands, and bubble psychology behind the "-tronics" craze.
+
+[Read more](./posts/2025-11-23-the-great-tronics-mania.md)
+
 ### Earth as a Cosmic Oasis
 *Michael Kotlikov - November 23, 2025*
 
