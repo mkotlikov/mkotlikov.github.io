@@ -2,6 +2,13 @@ Thoughts and insights about technology, software development, and more.
 
 ## Latest Posts
 
+### Earth as a Cosmic Oasis
+*Michael Kotlikov - November 23, 2025*
+
+Why Earth's unstoppable biosphere paired with a silent cosmos points to abiogenesis as the true bottleneck for life.
+
+[Read more](./posts/2025-11-23-earth-as-a-cosmic-oasis.md)
+
 ### Expanded-Context RAG: Enhancing Semantic Search and Contextual Retrieval
 *Michael Kotlikov - March 10, 2025*
 
