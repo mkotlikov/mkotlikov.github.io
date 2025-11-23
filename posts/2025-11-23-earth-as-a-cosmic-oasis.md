@@ -16,7 +16,7 @@ It is plausible that Earth has repopulated itself after near-sterilizing asteroi
 
 ## The Silence Beyond Earth
 
-Pick up a handful of soil anywhere on Earth and it teems with mind-bending diversity, much of it still unknown to science. Step off the planet and that richness collapses to nothing. The Moon shows no trace of biology, and Mars—despite decades of scrutiny—still refuses to reveal any unambiguous sign of life. The contrast between Earth's riot of organisms and the sterile quiet everywhere else is stark.
+Pick up a handful of soil anywhere on Earth and it teems with mind-bending diversity, much of it still unknown to science. Step off the planet and that richness collapses to nothing. The Moon shows no trace of biology, and Mars—despite decades of scrutiny—still refuses to reveal any unambiguous sign of life. Even the stray microbes and fungi we have found clinging to spacecraft windows or orbiting hardware trace back to terrestrial contamination. Every known sample of life began on Earth. The contrast between Earth's riot of organisms and the sterile quiet everywhere else is stark.
 
 ## The True Bottleneck
 
@@ -24,4 +24,4 @@ If life flourishes under brutal conditions once it starts, the real bottleneck i
 
 ## Conclusion
 
-Life's tenacity does not guarantee its ubiquity. The silence of the universe, paired with Earth's relentless biosphere, points to a sobering possibility: the existence of life is the rarest phenomena in the cosmos.
+Life's tenacity does not guarantee its ubiquity. The silence of the universe, paired with Earth's relentless biosphere, points to a sobering possibility: the existence of life is the rarest phenomenon in the cosmos, one that has happened exactly once.
