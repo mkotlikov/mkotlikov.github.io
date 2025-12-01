@@ -2,6 +2,13 @@ Thoughts and insights about technology, software development, and more.
 
 ## Latest Posts
 
+### Gravity: The "Fun" Patch (And Why It’s Full of Bugs)
+*Michael Kotlikov - December 1, 2025*
+
+Why gravity and dark matter are software hacks.
+
+[Read more](./posts/2025-12-01-gravity-the-fun-patch.md)
+
 ### The Glitch in the Infinite: Why Sacred Geometry Might Be the Universe's Source Code
 *Michael Kotlikov - December 1, 2025*
 
