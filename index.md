@@ -2,6 +2,13 @@ Thoughts and insights about technology, software development, and more.
 
 ## Latest Posts
 
+### The Glitch in the Infinite: Why Sacred Geometry Might Be the Universe's Source Code
+*Michael Kotlikov - December 1, 2025*
+
+Sacred geometry, fractals, and the fine-structure constant feel like the mathematical seams that betray our universe's procedural generation.
+
+[Read more](./posts/2025-12-01-the-glitch-in-the-infinite.md)
+
 ### Deep Dive: The KotliCluster Algorithm
 *Michael Kotlikov - November 23, 2025*
 
