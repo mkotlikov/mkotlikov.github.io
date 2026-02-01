@@ -2,6 +2,13 @@ Thoughts and insights about technology, software development, and more.
 
 ## Latest Posts
 
+### Doombuilding - Welcome to the era of TikTok for apps
+*Michael Kotlikov - February 1, 2026*
+
+Are we entering the era of "TikTok for apps"? How AI accelerators might be leading to "Doombuilding" and the shallow consumption of development cycles.
+
+[Read more](./posts/2026-02-01-doombuilding-welcome-to-the-era-of-tiktok-for-apps.md)
+
 ### Gravity: The "Fun" Patch (And Why It’s Full of Bugs)
 *Michael Kotlikov - December 1, 2025*
 
