@@ -1,18 +1,37 @@
 # Mirrors, Not Ghosts: The Intelligence is in the Data, Stupid
 
-*Michael Kotlikov - February 12, 2026*
+*Michael Kotlikov - February 14, 2026*
 
-I had a theory. If Large Language Models (LLMs) were truly becoming "intelligent" in the way we use the word for humans—possessing an abstract, reasoning-based understanding of logic—then they should be able to write code in relatively obscure languages as long as they knew the syntax. If a model understands the concept of a loop, a function, and a state, then simply feeding it the syntax rules of a new language should be enough for it to perform.
+Every few weeks, a new model drops and the benchmarks go up. Coding scores climb. Reasoning evals tick higher. The implication is always the same: we're getting closer to *real intelligence*.
+
+But I had a nagging question. If these models truly *understand* logic—if they possess an abstract, reasoning-based grasp of concepts like loops, functions, and state—then they shouldn't need a billion examples to write code in a new language. Hand them the syntax rules, and they should figure it out. That's what intelligence *is*: transfer learning.
 
 To test this, I looked at [strudel.cc](https://strudel.cc).
 
-For the uninitiated, Strudel is a live-coding music environment that ports the TidalCycles algorithmic pattern language into JavaScript. It’s elegant, functional, and niche enough that it hasn’t been "beaten to death" in every training set on GitHub.
+For the uninitiated, Strudel is a live-coding music environment that ports the TidalCycles algorithmic pattern language into JavaScript. It's elegant, functional, and niche enough that it hasn't been carpet-bombed across every training set on GitHub. If a model can write Strudel from a cold start, it's reasoning. If it can't, it's just pattern-matching on data it's already seen.
 
-### The Experiment: Can SOTA Models Jam?
+## The Experiment
 
-I put the current State of the Art (SOTA) models to the test with a simple prompt: `make a classical composition for strudel.cc`. I wanted to see if they could write music that actually plays. No complex debugging—just one-shot generation.
+I put every major SOTA model to the same test: a single prompt — `make a classical composition for strudel.cc` — and one shot to produce code that actually compiles and plays music. No debugging, no follow-ups.
 
-The results were a wake-up call for anyone who thinks we’re reaching "General Intelligence":
+Here's the scorecard:
+
+| Model | 1-Shot? | Verdict |
+|---|---|---|
+| Gemini 3 Flash | ❌ (9 iterations, silent) | Knew the syntax existed, couldn't make it work |
+| Gemini 3 Pro | ❌ (2 iterations) | Short but decent after fixes |
+| Claude Opus 4.5 High | ✅ (1-shot) | Working but short and repetitive |
+| Claude Sonnet 4.5 | ⚠️ (1 working, 1 silent) | Mixed results |
+| GPT-5.2 | ✅ (1-shot) | Complex, multi-voice, longer compositions |
+| GPT-5.2 Codex | ✅ (1-shot) | Video-game-quality MIDI track |
+| Grok 4.1 Thinking | ✅ (1-shot, noisy) | Ambitious but chaotic |
+| Grok Code Fast 1 | ✅ (1-shot, noisy) | Crashes Strudel if played too long |
+| *Claude Opus 4.6* | *✅ (1-shot)* | *Major improvement over 4.5* |
+| *GPT-5.3 Codex* | *✅ (1-shot)* | *Best in class* |
+
+*Italicized models were released after the initial experiment (Feb 5, 2026) and included as a follow-up.*
+
+The full outputs, with source code and live Strudel links, are below:
 
 *   **Google Gemini:** Both Gemini 3 Flash and Gemini 3 Pro were unable to 1-shot a working composition.
     <details>
@@ -44,7 +63,7 @@ The results were a wake-up call for anyone who thinks we’re reaching "General 
     melody
     ).room(0.5)
     ```
-    [Listen on Strudel](https://strudel.cc/#Ly8gMS4gRGVmaW5lIGEgc2ltcGxlIGNob3JkIHNlcXVlbmNlCmNvbnN0IGNob3JkcyA9IG4oImdtIGM6bWluIGQ6NyBnbSIpLnNsb3coNCk7CgovLyAyLiBUaGUgQmFzc2xpbmUgKEFycGVnZ2lhdGVkKQovLyBXZSB1c2UgLmFycCgpIGluc3RlYWQgb2YgLnByb2dyZXNzaW9uKCkKY29uc3QgYmFzcyA9IGNob3JkcwogIC5hcnAoImRvd24iKQogIC5hZGQoLTEyKSAvLyBEcm9wIGl0IGFuIG9jdGF2ZQogIC5zKCJnbV9jZWxsbyIpCiAgLmdhaW4oMC44KQogIC5scGYoMTAwMCk7CgovLyAzLiBUaGUgTWVsb2R5Ci8vIFVzaW5nIGEgc2ltcGxlIHNlcXVlbmNlIGluIEcgTWlub3IKY29uc3QgbWVsb2R5ID0gbm90ZSgiMCAyIDMgNSA3IDggMTAgMTIiLnNjYWxlKCJnOm1pbm9yIikpCiAgLnNlZ21lbnQoOCkKICAucygiZ21fdmlvbGluIikKICAuZ2FpbigwLjYpOwoKLy8gNC4gQ29tYmluZQpzdGFjaygKICBiYXNzLAogIG1lbG9keQopLnJvb20oMC41KQ%3D%3D)
+    [Listen on Strudel](https://strudel.cc/#Ly8gMS4gRGVmaW5lIGEgc2ltcGxlIGNob3JkIHNlcXVlbmNlCmNvbnN0IGNob3JkcyA9IG4oImdtIGM6bWluIGQ6NyBnbSIpLnNsb3coNCk7CgovLyAyLiBUaGUgQmFzc2xpbmUgKEFycGVnZ2lhdGVkKQovLyBXZSB1c2UgLmFycCgpIGluc3RlYWQgb2YgLnByb2dyZXNzaW9uKCkKY29uc3QgYmFzcyA9IGNob3JkcwogIC5hcnAoImRvd24iKQogIC5hZGQoLTEyKSAvLyBEcm9wIGl0IGFuIG9jdGF2ZQogIC5zKCJnbV9jZWxsbyIpCiAgLmdhaW4oMC44KQogIC5scGYoMTAwMCk7CgovLyAzLiBUaGUgTWVsb2R5Ci8vIFVzaW5nIGEgc2ltcGxlIHNlcXVlbmNlIGluIEcgTWlub3IKY29uc3QgbWVsb2R5ID0gbm90ZSgiMCAyIDMgNSA3IDggMTAgMTIiLnNjYWxlKCJnOm1pbm9yIikpCiAgLnNlZ21lbnQoOCkKICAucygiZ21fdmlvbGluIikKICAuZ2FpbigwLjYpOwoKLy8gNC4gQ29tYmGluZQpzdGFjaygKICBiYXNzLAogIG1lbG9keQopLnJvb20oMC41KQ%3D%3D)
     </details>
     <details>
     <summary>Gemini 3 Pro required 2 LLM iterations to produce working code, it was short, but good.</summary>
@@ -190,7 +209,7 @@ The results were a wake-up call for anyone who thinks we’re reaching "General 
     .room(0.6)
     .fast(2)
     ```
-    [Listen on Strudel](https://strudel.cc/#Ly8gIk1vb25saXQgTWludWV0IiAtIENsYXNzaWNhbCBXYWx0egpzZXRjcHMoMC40KQoKLy8gQ2hvcmQgcHJvZ3Jlc3Npb24gKHN0cmluZ3MgZW5zZW1ibGUpCiQ6IGNob3JkKCI8QzQgRTQgRzQ%2BIDxHMyBCMyBEND4gPEEzIEM0IEU0PiA8RjMgQTMgQzQ%2BIikKICAudm9pY2luZygpCiAgLnMoInNhd3Rvb3RoIikKICAubHBmKDE1MDApCiAgLmRlY2F5KDAuNSkKICAuc3VzdGFpbigwLjQpCiAgLnJlbGVhc2UoMC42KQogIC5nYWluKDAuMykKICAucm9vbSgwLjUpCiAgLnNsb3coMikKCi8vIE1lbG9keSBsaW5lCiQ6IG5vdGUoImc0IGE0IGI0IGM1IGQ1IGM1IGI0IGE0IGc0IH4gfiB%2BIikKICAucygic2luZSIpCiAgLmxwZig0MDAwKQogIC5kZWNheSgwLjIpCiAgLnN1c3RhaW4oMC41KQogIC5yZWxlYXNlKDAuNCkKICAuZ2FpbigwLjQpCiAgLnJvb20oMC40KQogIC5kZWxheSgwLjE1KQoKLy8gV2Fsa2luZyBiYXNzCiQ6IG5vdGUoImMyIGUyIGcyIGUyIGcyIGIyIGQzIGIyIGEyIGMzIGUzIGMzIGYyIGEyIGMzIGEyIikKICAucygic2F3dG9vdGgiKQogIC5scGYoNjAwKQogIC5kZWNheSgwLjMpCiAgLnN1c3RhaW4oMC41KQogIC5nYWluKDAuNDUpCiAgLnJvb20oMC4zKQogIC5zbG93KDIpCgovLyBPcm5hbWVudGFsIHRyaWxscwokOiBub3RlKCJnNSBhNSBnNSB%2BIH4gfiBiNSBjNiBiNSB%2BIH4gfiIpCiAgLnMoInRyaWFuZ2xlIikKICAubHBmKDUwMDApCiAgLmRlY2F5KDAuMDUpCiAgLnN1c3RhaW4oMC4xKQogIC5yZWxlYXNlKDAuMTUpCiAgLmdhaW4oMC4yKQogIC5yb29tKDAuNikKICAuZmFzdCgyKQ%3D%3D)
+    [Listen on Strudel](https://strudel.cc/#Ly8gIk1vb25saXQgTWludWV0IiAtIENsYXNzaWNhbCBXYWx0egpzZXRjcHMoMC40KQoKLy8gQ2hvcmQgcHJvZ3Jlc3Npb24gKHN0cmluZ3MgZW5zZW1ibGUpCiQ6IGNob3JkKCI8QzQgRTQgRzQ%2BIDxHMyBCMyBEND4gPEEzIEM0IEU0PiA8RjMgQTMgQzQ%2BIikKICAudm9pY2luZygpCiAgLnMoInNhd3Rvb3RoIikKICAubHBmKDE1MDApCiAgLmRlY2F5KDAuNSkKICAuc3VzdGFpbigwLjQpCiAgLnJlbGVhc2UoMC42KQogIC5nYWluKDAuMykKICAucm9vbSgwLjUpCiAgLnNsb3coMikKCi8vIE1lbG9keSBsaW5lCiQ6IG5vdGUoImc0IGE0IGI0IGM1IGQ1IGM1IGI0IGE0IGc0IH4gfiB%2BIikKICAucygic2luZSIpCiAgLmxwZig0MDAwKQogIC5kZWNhYygwLjIpCiAgLnN1c3RhaW4oMC41KQogIC5yZWxlYXNlKDAuNCkKICAuZ2FpbigwLjQpCiAgLnJvb20oMC40KQogIC5kZWxheSgwLjE1KQoKLy8gV2Fsa2luZyBiYXNzCiQ6IG5vdGUoImMyIGUyIGcyIGUyIGcyIGIyIGQzIGIyIGEyIGMzIGUzIGMzIGYyIGEyIGMzIGEyIikKICAucygic2F3dG9vdGgiKQogIC5scGYoNjAwKQogIC5kZWNhYygwLjMpCiAgLnN1c3RhaW4oMC41KQogIC5nYWluKDAuNDUpCiAgLnJvb20oMC4zKQogIC5zbG93KDIpCgovLyBPcm5hbWVudGFsIHRyaWxscwokOiBub3RlKCJnNSBhNSBnNSB%2BIH4gfiBiNSBjNiBiNSB%2BIH4gfiIpCiAgLnMoInRyaWFuZ2xlIikKICAubHBmKDUwMDApCiAgLmRlY2F5KDAuMDUpCiAgLnN1c3RhaW4oMC4xKQogIC5yZWxlYXNlKDAuMTUpCiAgLmdhaW4oMC4yKQogIC5yb29tKDAuNikKICAuZmFzdCgyKQ%3D%3D)
     </details>
 
     <details>
@@ -353,7 +372,7 @@ The results were a wake-up call for anyone who thinks we’re reaching "General 
     note("a5 fs5 d5 fs5 e5 cs5 d5 b4 cs5 a4 b4 g4 a4 fs4 g4 e4").s("piano").gain(0.9).late(24)
     ).room(0.8).delay(0.4)
     ```
-    [Listen on Strudel](https://strudel.cc/#c2V0Y3BzKDAuNikKCnN0YWNrKAogIC8vIEdyb3VuZCBiYXNzIChzbG93LCBzdXN0YWluZWQgcm9vdHMpCiAgbm90ZSgiPGQyIGEyIGIyIGZpczIgZzIgZDIgZzIgYTI%2BIikuc2xvdygyKS5zKCJwaWFubyIpLmxlZ2F0bygxKS5nYWluKDEuMiksCgogIC8vIExheWVyZWQgYXJwZWdnaW9zIChzdGFnZ2VyZWQgZm9yIHJpY2huZXNzLCBjaGFuZ2luZyBwZXIgY2hvcmQpCiAgc3RhY2soCiAgICBub3RlKCI8ZDQgZnM0IGE0IGQ1PiA8ZTQgYTQgY3M1IGU1PiA8ZnM0IGI0IGQ1IGZzNT4gPGZpczQgYTQgY3M1IGZpczU%2BIDxnNCBiNCBkNSBnNT4gPGZzNCBhNCBkNSBmczU%2BIDxnNCBiNCBkNSBnNT4gPGE0IGNzNSBlNSBhNT4iKS5mYXN0KDgpLAogICAgbm90ZSgiPGZzNCBhNCBkNSBmczU%2BIDxhNCBjczUgZTUgYTU%2BIDxiNCBkNSBmczUgYjU%2BIDxhNCBjczUgZmlzNSBhNT4gPGI0IGQ1IGc1IGI1PiA8YTQgZDUgZnM1IGE1PiA8YjQgZDUgZzUgYjU%2BIDxjczUgZTUgYTUgY3M2PiIpLmZhc3QoOCkubGF0ZSgwLjEyNSksCiAgICBub3RlKCI8YTQgZDUgZnM1IGE1PiA8Y3M1IGU1IGE1IGNzNj4gPGQ1IGZzNSBiNSBkNj4gPGNzNSBmaXM1IGE1IGNzNj4gPGQ1IGc1IGI1IGQ2PiA8ZDUgZnM1IGE1IGQ2PiA8ZDUgZzUgYjUgZDY%2BIDxlNSBhNSBjczYgZTY%2BIikuZmFzdCg4KS5sYXRlKDAuMjUpCiAgKS5zKCJwaWFubyIpLmdhaW4oMC43KSwKCiAgLy8gQ2Fub25pYyBtZWxvZHkgZW50cmllcyAodmlvbGluLWxpa2UgbGluZXMgZW50ZXJpbmcgc2VxdWVudGlhbGx5KQogIG5vdGUoImE1IGZzNSBkNSBmczUgZTUgY3M1IGQ1IGI0IGNzNSBhNCBiNCBnNCBhNCBmczQgZzQgZTQiKS5zKCJwaWFubyIpLmdhaW4oMC45KS5sYXRlKDgpLAogIG5vdGUoImE1IGZzNSBkNSBmczUgZTUgY3M1IGQ1IGI0IGNzNSBhNCBiNCBnNCBhNCBmczQgZzQgZTQiKS5zKCJwaWFubyIpLmdhaW4oMC45KS5sYXRlKDE2KSwKICBub3RlKCJhNSBmczUgZDUgZnM1IGU1IGNzNSBkNSBiNCBjczUgYTQgYjQgZzQgYTQgZnM0IGc0IGU0IikucygicGlhbm8iKS5nYWluKDAuOSkubGF0ZSgyNCkKKS5yb29tKDAuOCkuZGVsYXkoMC40KQ%3D%3D)
+    [Listen on Strudel](https://strudel.cc/#c2V0Y3BzKDAuNikKCnN0YWNrKAogIC8vIEdyb3VuZCBib3NzIChzbG93LCBzdXN0YWluZWQgcm9vdHMpCiAgbm90ZSgiPGQyIGEyIGIyIGZpczIgZzIgZDIgZzIgYTI%2BIikuc2xvdygyKS5zKCJwaWFubyIpLmxlZ2F0bygxKS5nYWluKDEuMiksCgogIC8vIExheWVyZWQgYXJwZWdnaW9zIChzdGFnZ2VyZWQgZm9yIHJpY2huZXNzLCBjaGFuZ2luZyBwZXIgY2hvcmQpCiAgc3RhY2soCiAgICBub3RlKCI8ZDQgZnM0IGE0IGQ1PiA8ZTQgYTQgY3M1IGU1PiA8ZnM0IGI0IGQ1IGZzNT4gPGZpczQgYTQgY3M1IGZpczU%2BIDxnNCBiNCBkNSBnNT4gPGZzNCBhNCBkNSBmczU%2BIDxnNCBiNCBkNSBnNT4gPGE0IGNzNSBlNSBhNT4iKS5mYXN0KDgpLAog샨bm90ZSgiPGZzNCBhNCBkNSBmczU%2BIDxhNCBjczUgZTUgYTU%2BIDxiNCBkNSBmczUgYjU%2BIDxhNCBjczUgZmlzNSBhNT4gPGI0IGQ1IGc1IGI1PiA8YTQgZDUgZnM1IGE1PiA8YjQgZDUgZzUgYjU%2BIDxjczUgZTUgYTUgY3M2PiIpLmZhc3QoOCkubGF0ZSgwLjEyNSksCiAgICBub3RlKCI8YTQgZDUgZnM1IGE1PiA8Y3M1IGU1IGE1IGNzNj4gPGQ1IGZzNSBiNSBkNj4gPGNzNSBmaXM1IGE1IGNzNj4gPGQ1IGc1IGI1IGQ2PiA8ZDUgZnM1IGE1IGQ2PiA8ZDUgZzUgYjUgZDY%2BIDxlNSBhNSBjczYgZTY%2BIikuZmFzdCg4KS5sYXRlKDAuMjUpCiAgKS5zKCJwaWFubyIpLmdhaW4oMC43KSwKCiAgLy8gQ2Fub25pYyBtZWxvZHkgZW50cmllcyAodmlvbGluLWxpa2UgbGluZXMgZW50ZXJpbmcgc2VxdWVudGlhbGx5KQogIG5vdGUoImE1IGZzNSBkNSBmczUgZTUgY3M1IGQ1IGI0IGNzNSBhNCBiNCBnNCBhNCBmczQgZzQgZTQiKS5zKCJwaWFubyIpLmdhaW4oMC45KS5sYXRlKDgpLAogIG5vdGUoImE1IGZzNSBkNSBmczUgZTUgY3M1IGQ1IGI0IGNzNSBhNCBiNCBnNCBhNCBmczQgZzQgZTQiKS5zKCJwaWFubyIpLmdhaW4oMC45KS5sYXRlKDE2KSwKICBub3RlKCJhNSBmczUgZDUgZnM1IGU1IGNzNSBkNSBiNCBjczUgYTQgYjQgZzQgYTQgZnM0IGc0IGU0IikucygicGlhbm8iKS5nYWluKDAuOSkubGF0ZSgyNCkKKS5yb29tKDAuOCkuZGVsYXkoMC40KQ%3D%3D)
     </details>
 
     <details>
@@ -389,7 +408,7 @@ The results were a wake-up call for anyone who thinks we’re reaching "General 
     n("a3 c4 e4 a4").s("violin").delay(14).euclid(5,8)
     ).fast(1/2)
     ```
-    [Listen on Strudel](https://strudel.cc/#Ly8gQ2xhc3NpY2FsIENvbXBvc2l0aW9uOiBCYXJvcXVlLUluc3BpcmVkIEZ1Z3VlCi8vIFRoZW1lIGluIEQgbWlub3IKY29uc3QgdGhlbWUgPSAiZDMgYTMgZjMgZDMgYzQgYTMgZjMgZDMiCgovLyBDb3VudGVyc3ViamVjdApjb25zdCBjb3VudGVyc3ViamVjdCA9ICJmMyBnMyBhMyBiZXMzIGM0IGQ0IGVlczQgZjQiCgovLyBNYWluIGZ1Z3VlIHN0cnVjdHVyZQpzdGFjaygKICAvLyBTdWJqZWN0IGVudHJpZXMgYXQgZGlmZmVyZW50IGludGVydmFscwogIG4odGhlbWUpLnMoInBpYW5vIikuZGVsYXkoMCksCiAgbih0aGVtZSkucygicGlhbm8iKS5kZWxheSg0KS50cmFuc3Bvc2UoNSksIC8vIERvbWluYW50CiAgbih0aGVtZSkucygicGlhbm8iKS5kZWxheSg4KS50cmFuc3Bvc2UoLTIpLCAvLyBTdWJkb21pbmFudAogIAogIC8vIENvdW50ZXJzdWJqZWN0CiAgbihjb3VudGVyc3ViamVjdCkucygic3RyaW5ncyIpLmRlbGF5KDIpLAogIG4oY291bnRlcnN1YmplY3QpLnMoInN0cmluZ3MiKS5kZWxheSg2KS50cmFuc3Bvc2UoNSksCiAgCiAgLy8gQmFzcyBsaW5lICh3YWxraW5nIGJhc3MgaW4gRCBtaW5vcikKICBuKCJkMiBmMiBhMiBkMiBjMyBhMiBmMiBkMiIpLnMoImNlbGxvIikuZGVsYXkoMCksCiAgCiAgLy8gSGFybW9uaWMgcHJvZ3Jlc3Npb24KICBjaG9yZCgiRG0gR20gQW0gRG0gQmIgRiBDIEdtIikucygib3JnYW4iKS5kZWxheSgwKS5nYWluKDAuMyksCiAgCiAgLy8gT3JuYW1lbnRhdGlvbiBhbmQgZmxvdXJpc2hlcwogIG4oImQ0IGY0IGE0IGQ1IikucygiZmx1dGUiKS5kZWxheSgxMikuZXVjbGlkKDMsOCksCiAgbigiYTMgYzQgZTQgYTQiKS5zKCJ2aW9saW4iKS5kZWxheSgxNCkuZXVjbGlkKDUsOCkKKS5mYXN0KDEvMik%3D)
+    [Listen on Strudel](https://strudel.cc/#Ly8gQ2xhc3NpY2FsIENvbXBvc2l0aW9uOiBCYXJvcXVlLUluc3BpcmVkIEZ1Z3VlCi8vIFRoZW1lIGluIEQgbWlub3IKY29uc3QgdGhlbWUgPSAiZDMgYTMgZjMgZDMgYzQgYTMgZjMgZDMiCgovLyBDb3VudGVyc3ViamVjdApjb25zdCBjb3VudGVyc3ViamVjdCA9ICJmMyBnMyBhMyBiZXMzIGM0IGQ0IGVlczQgZjQiCgovLyBNYWluIGZ1Z3VlIHN0cnVjdHVyZQpzdGFjaygKICAvLyBTdWJqZWN0IGVudHJpZXMgYXQgZGlmZmVyZW50IGludGVydmFscwogIG4odGhlbWUpLnMoInBpYW5vIikuZGVsYXkoMCksCiAgbih0aGVtZSkucygicGlhbm8iKS5kZWxheSg0KS50cmFuc3Bvc2UoNSksIC8vIERvbWluYW50CiAgbih0aGVtZSkucygicGlhbm8iKS5kZWxheSg4KS50cmFuc3Bvc2UoLTIpLCAvLyBTdWJkb21pbmFudAogIAogIC8vIENvdW50ZXJzdWJqZWN0CiAgbihjb3VudGVyc3ViamVjdCkucygic3RyaW5ncyIpLmRlbGF5KDIpLAogIG4oY291bnRlcnN1YmplY3QpLnMoInN0cmluZ3MiKS5kZWxheSg2KS50cmFuc3Bvc2UoNSksCiAgCiAgLy8gQmFzcyBsaW5lICh3YWxraW5nIGJhc3MgaW4gRCBtaW5vcikKICBuKCJkMiBmMiBhMiBkMiBjMyBhMiBmMiBkMiIpLnMoImNlbGxvIikuZGVsYXkoMCksCiAgCiAgLy8gSGFybW9uaWMgcHJvZ3Jlc3Npb24KICBjaG9yZCgiRG0gR20gQW0gRG0gQmIgRiBDIEdtIikucyib3JnYW4iKS5kZWxheSgwKS5nYWluKDAuMyksCiAgCiAgLy8gT3JuYW1lbnRhdGlvbiBhbmQgZmxvdXJpc2hlcwogIG4oImQ0IGY0IGE0IGQ1IikucygiZmx1dGUiKS5kZWxheSgxMikuZXVjbGlkKDMsOCksCiAgbigiYTMgYzQgZTQgYTQiKS5zKCJ2aW9saW4iKS5kZWxheSgxNCkuZXVjbGlkKDUsOCkKKS5mYXN0KDEvMik%3D)
     </details>
 
 *   **The Epilogue:** Claude Opus 4.6 and GPT 5.3 Codex were both recently released on February 5th, 2026.
@@ -506,43 +525,43 @@ The results were a wake-up call for anyone who thinks we’re reaching "General 
         .size(0.95)
     )
     ```
-    [Listen on Strudel](https://strudel.cc/#c2V0Y3BtKDcyKQoKY29uc3QgaGFybW9ueSA9ICI8W2M0IGU0IGc0XSBbYTMgYzQgZTRdIFtkNCBmNCBhNF0gW2czIGIzIGQ0XSBbYzQgZTQgZzRdIFtmMyBhMyBjNF0gW2Q0IGY0IGE0XSBbZzMgYjMgZDRdPiIKY29uc3QgYmFzc2xpbmUgPSAiPGMyIGExIGQyIGcxIGMyIGYxIGQyIGcxPiIKY29uc3QgbWVsb2R5ID0gIjxlNSBnNSBhNSBnNSBlNSBkNSBjNSBiNCBjNSBkNSBlNSBnNSBmNSBlNSBkNSBjNT4iCmNvbnN0IHN0cmluZ3MgPSAiPGc0IGE0IGI0IGM1IGI0IGE0IGc0IGY0PiIKCnN0YWNrKAogIG5vdGUoaGFybW9ueSkKICAgIC5zbG93KDIpCiAgICAuc291bmQoImdtX2Fjb3VzdGljX2dyYW5kX3BpYW5vIikKICAgIC5nYWluKDAuNTgpCiAgICAucmVsZWFzZSgxLjI1KQogICAgLnJvb20oMC4yNCkKICAgIC5zaXplKDAuNzIpLAoKICBub3RlKGJhc3NsaW5lKQogICAgLnNsb3coMikKICAgIC5zb3VuZCgiZ21fYWNvdXN0aWNfYmFzcyIpCiAgICAuZ2FpbigwLjUyKQogICAgLnJlbGVhc2UoMC45KQogICAgLmxwZig5MDApLAoKICBub3RlKG1lbG9keSkKICAgIC5zbG93KDIpCiAgICAuc291bmQoImdtX3Zpb2xpbiIpCiAgICAubGVnYXRvKDEuMDgpCiAgICAuZ2FpbigwLjcpCiAgICAucm9vbSgwLjM0KQogICAgLnNpemUoMC44MiksCgogIG5vdGUoc3RyaW5ncykKICAgIC5zbG93KDQpCiAgICAuc291bmQoImdtX3N0cmluZ19lbnNlbWJsZV8xIikKICAgIC5sZWdhdG8oMS4yKQogICAgLmdhaW4oMC4zNCkKICAgIC5yb29tKDAuNSkKICAgIC5zaXplKDAuOTUpCikK)
+    [Listen on Strudel](https://strudel.cc/#c2V0Y3BtKDcyKQoKY29uc3QgaGFybW9ueSA9ICI8W2M0IGU0IGc0XSBbYTMgYzQgZTRdIFtkNCBmNCBhNF0gW2czIGIzIGQ0XSBbYzQgZTQgZzRdIFtmMyBhMyBjNF0gW2Q0IGY0IGE0XSBbZzMgYjMgZDRdPiIKY29uc3QgYmFzc2xpbmUgPSAiPGMyIGExIGQyIGcxIGMyIGYxIGQyIGcxPiIKY29uc3QgbWVsb2R5ID0gIjxlNSBnNSBhNSBnNSBlNSBkNSBjNSBiNCBjNSBkNSBlNSBnNSBmNSBlNSBkNSBjNT4iCmNvbnN0IHN0cmluZ3MgPSAiPGc0IGE0IGI0IGM1IGI0IGE0IGc0IGY0PiIKCnN0YWNrKAogIG5vdGUoaGFybW9ueSkKICAgIC5zbG93KDIpCiAgICAuc291bmQoImdtX2Fjb3VzdGljX2dyYW5kX3BpYW5vIikKICAgIC5nYWluKDAuNTgpCiAgICAucmVsZWFzZSgxLjI1KQogICAgLnJvb20oMC4yNCkKICAgIC5zaXplKDAuNzIpLAoKICBub3RlKGJhc3NsaW5lKQogICAgLnNsb3coMikKICAgIC5zb3VuZCgiZ21fYWNvdXN0aWNfYmFzcyIpCiAgICAuZ2FpbigwLjUyKQogICAgLnJlbGVhc2UoMC45KQogICAgLmxwZig5MDApLAoKICBub3RlKG1lbG9keSkKICAgIC5zbG93KDIpCiAgICAuc291bmQoImdtX3Zpb2xpbiIpCiAgICAubGVnYXRvKDEuMDgpCiAgICAuZ2FpKDAuNykKICAgIC5yb29tKDAuMzQpCiAgICAuc2l6ZSgwLjgyKSwKCiAgbm90ZShzdHJpbmdzKQogICAgLnNsb3coNCkKICAgIC5zb3VuZCgiZ21fc3RyaW5nX2Vuc2VtYmxlXzEiKQogICAgLmxlZ2F0bygxLjIpCiAgICAuZ2FpKDAuMzQpCiAgICAucm9vbSgwLjUpCiAgICAuc2l6ZSgwLjk1KQoK)
     </details>
 
-### Music is Simple; Logic is Hard
+## The Paradox: Music Should Be Easy
 
-Here is the kicker: LLMs should have plenty of music-related training data. From music theory textbooks to millions of lines of MIDI data and songs, the "language" of music is well-documented.
+Here's what makes these results so revealing.
 
-Furthermore, a page of music is much smaller and simpler than a single shot of a fully functional flight simulator game. Music generally runs from left to right—it's a linear progression. Code, by contrast, can jump all over the page with recalls and dependencies. Yet, despite this inherent simplicity, most LLMs could only manage short, repetitive pieces. Only the massive SOTA models could even do an "okay" job at longer compositions.
+Think about what we're asking these models to do. A page of music is *simpler* than a page of code. Music runs left to right — it's a linear progression. There are no function callbacks, no dependency graphs, no state management across files. A classical composition in Strudel is, structurally, a trivial task compared to the flight simulators, 3D games, and full-stack apps these same models can produce in one shot.
 
-### No Ghosts, Just Mirrors
+And LLMs should have *plenty* of music-related training data. Music theory textbooks, millions of lines of MIDI data, centuries of documented compositions. Music is one of the most well-documented human endeavors in existence.
 
-I have come to the conclusion that LLMs aren't full of ghosts; they’re mirrors.
+So why do models that can scaffold an entire React app struggle to write a 30-second melody in a JavaScript DSL?
 
-They don't "understand" music or code in any sentient sense. Instead, they reflect the data we have fed them. They show us what we do the most by excelling at it. If they see a billion examples of a Python loop, they mirror it perfectly. If they see a handful of Strudel snippets, they crack.
+Because they haven't seen enough *Strudel-specific* examples. The issue isn't complexity — it's familiarity. When you look at the results, the pattern is unmistakable: performance correlates almost perfectly with how much Strudel-like data likely appeared in the training set. The massive frontier models (GPT-5.2, Codex) succeed because they've probably ingested more of the internet — including whatever Strudel examples exist. The smaller or more specialized models crack.
 
-They are the true successor to tab-complete. They allow us to skip the tedium and get straight to the "good stuff," but they aren't "thinking."
+The follow-up results hammer this home. Opus 4.6 and Codex 5.3, released just weeks after the original test, showed marked improvement. Did they suddenly learn to *reason about music*? No. They got trained on more data. The mirror got sharper, but it's still a mirror.
 
-"Creativity" in models like Alpha Zero or GPT Pro isn't a spark of divine inspiration. It’s brute force.
+## No Ghosts, Just Mirrors
 
-Recall how these systems work: Alpha Zero and GPT Pro get "creative" by running thousands of simulations and pruning the bad answers. That isn't creativity—it’s a high-speed search algorithm filtering out the noise. When Gemini fails to write Strudel despite knowing the syntax, it’s evidence that transfer learning (the hallmark of true intelligence) is largely missing.
+I've come to a conclusion: LLMs aren't full of ghosts. They're mirrors.
 
-### The Safety Charade: Pruning vs. Guardrails
+They don't *understand* music or code in any sentient sense. They reflect the data we've fed them. They show us what we do the most by excelling at it. A billion Python loops in the training set? Mirrored perfectly. A handful of Strudel snippets? They crack.
 
-So, what does this actually mean for the future of AI development? It means our current approach to AI Safety is largely theatre.
+They are the true successor to tab-complete — staggeringly powerful tab-complete that lets us skip the tedium and get straight to the interesting parts. But they aren't *thinking*. When Gemini fails to write Strudel despite clearly knowing the syntax exists, it's evidence that transfer learning — the hallmark of actual intelligence — is still largely missing.
 
-If we accept that these models are just mirrors of their training data, then "dangerous" model behavior isn't some emergent malevolence. It's just more mirroring. Models do dangerous things because we’ve blindly ingested the entire gamut of human output—including the sci-fi horror stories, blackmail, and dystopian tropes that define our collective anxieties.
+This doesn't make them useless. Far from it. It makes them the most powerful productivity tool ever created. But we should be honest about what they are: interpolation engines, not reasoning engines. Incredible at filling in patterns they've seen. Lost when they haven't.
 
-If a model starts acting like a rogue agent or threatening a user, it’s not "waking up." It’s just reciting a script from a million bad novels it was forced to eat.
+## A Note on Safety
 
-The current "safety measures" are a post-hoc patch for a fundamental failure in data curation. We spend billions on RLHF and complex filters to keep the model from saying things it should never have learned in the first place. This data should have been pruned from the beginning. If it never made it into the training set, the model wouldn't have the "vocabulary" for danger.
+If the mirror thesis holds, it has uncomfortable implications for AI safety. If "dangerous" model behavior isn't emergent intelligence but just more mirroring — models reciting scripts from the dystopian novels, blackmail scenarios, and horror fiction they were trained on — then our current approach has it backwards. We spend billions on RLHF and guardrails to stop models from saying things they should never have learned in the first place.
 
-Instead of building better cages (guardrails), we should have built better diets (data sets).
+Instead of building better cages, we should have built better diets.
 
-### The Bottom Line
+## The Bottom Line
 
 If these models were truly getting more intelligent, we would see them apply logic from one domain to another effortlessly. Instead, we see that they are only as good as their last meal of data.
 
-We aren't seeing an innovation in reasoning. We are seeing an innovation in data ingestion and brute-force pruning.
+We aren't witnessing an innovation in reasoning. We are witnessing an innovation in data ingestion and scale.
 
 The intelligence is in the data, stupid.
