@@ -2,6 +2,8 @@
 
 *Michael Kotlikov - March 10, 2025*
 
+> **TL;DR:** Embed small text chunks for precise semantic search, but return them with expanded surrounding context—reducing LLM hallucination by giving the model the full picture instead of isolated fragments.
+
 ## Introduction
 
 As large language models (LLMs) become more integral to information retrieval and knowledge synthesis, ensuring they receive accurate and complete context is crucial. One of the core challenges in retrieval-augmented generation (RAG) is that conventional approaches often return incomplete chunks of text. This can lead to fragmentation in the retrieved content, causing the LLM to hallucinate missing information or generate responses that lack coherence.

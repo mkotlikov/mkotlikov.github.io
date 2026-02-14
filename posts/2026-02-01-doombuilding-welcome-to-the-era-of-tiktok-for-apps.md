@@ -2,6 +2,8 @@
 
 *Michael Kotlikov - February 1, 2026*
 
+> **TL;DR:** Generative AI has made code so cheap to produce that we're proving Jevons paradox right—consuming more development cycles instead of saving them—while mistaking watching an LLM solve problems for actually learning how to solve them ourselves.
+
 We all know the feeling of doomscrolling. You sit down for five minutes of entertainment and suddenly it’s 2 AM, your thumb is cramping, and you’ve consumed 400 hyper-niche videos that you won't remember tomorrow. It feels like engagement, but it’s really just passive consumption on fast-forward.
 
 Recently, I’ve started wondering if generative AI is doing the same thing to coding. Have we entered the short attention span era of work? Welcome to "Doombuilding."

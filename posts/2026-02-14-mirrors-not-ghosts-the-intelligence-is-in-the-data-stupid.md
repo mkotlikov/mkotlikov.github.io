@@ -2,6 +2,8 @@
 
 *Michael Kotlikov - February 14, 2026*
 
+> **TL;DR:** I tested every major SOTA model on Strudel—a niche music DSL with minimal training data—and found that performance tracks data exposure, not reasoning ability. LLMs aren't ghosts with emergent intelligence; they're mirrors reflecting their training sets back at us.
+
 Every few weeks, a new model drops and the benchmarks go up. Coding scores climb. Reasoning evals tick higher. The implication is always the same: we're getting closer to *real intelligence*.
 
 Andrej Karpathy [has described](https://x.com/karpathy/status/1973435013875314729) LLMs as a new kind of entity in the intelligence space — "distinct from animals, more like ghosts or spirits" — prepackaged with intelligence not by evolution, but by predicting the next token over the internet. It's a compelling framing. But are they really ghosts? Or something less spooky?
