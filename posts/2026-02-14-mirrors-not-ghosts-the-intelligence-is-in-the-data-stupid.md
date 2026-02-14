@@ -36,7 +36,7 @@ Here's the scorecard:
 The full outputs, with source code and live Strudel links, are below:
 
 *   **Google Gemini:** Both Gemini 3 Flash and Gemini 3 Pro were unable to 1-shot a working composition.
-    <details>
+    <details markdown="1">
     <summary>Gemini 3 Flash required 9 LLM iterations to produce working code, which was completely silent. Very unimpressive for the Gemini 3 model that's supposedly the best at coding.</summary>
 
     ```javascript
@@ -67,7 +67,7 @@ The full outputs, with source code and live Strudel links, are below:
     ```
     [Listen on Strudel](https://strudel.cc/#Ly8gMS4gRGVmaW5lIGEgc2ltcGxlIGNob3JkIHNlcXVlbmNlCmNvbnN0IGNob3JkcyA9IG4oImdtIGM6bWluIGQ6NyBnbSIpLnNsb3coNCk7CgovLyAyLiBUaGUgQmFzc2xpbmUgKEFycGVnZ2lhdGVkKQovLyBXZSB1c2UgLmFycCgpIGluc3RlYWQgb2YgLnByb2dyZXNzaW9uKCkKY29uc3QgYmFzcyA9IGNob3JkcwogIC5hcnAoImRvd24iKQogIC5hZGQoLTEyKSAvLyBEcm9wIGl0IGFuIG9jdGF2ZQogIC5zKCJnbV9jZWxsbyIpCiAgLmdhaW4oMC44KQogIC5scGYoMTAwMCk7CgovLyAzLiBUaGUgTWVsb2R5Ci8vIFVzaW5nIGEgc2ltcGxlIHNlcXVlbmNlIGluIEcgTWlub3IKY29uc3QgbWVsb2R5ID0gbm90ZSgiMCAyIDMgNSA3IDggMTAgMTIiLnNjYWxlKCJnOm1pbm9yIikpCiAgLnNlZ21lbnQoOCkKICAucygiZ21fdmlvbGluIikKICAuZ2FpbigwLjYpOwoKLy8gNC4gQ29tYmGluZQpzdGFjaygKICBiYXNzLAogIG1lbG9keQopLnJvb20oMC41KQ%3D%3D)
     </details>
-    <details>
+    <details markdown="1">
     <summary>Gemini 3 Pro required 2 LLM iterations to produce working code, it was short, but good.</summary>
 
     ```javascript
@@ -106,7 +106,7 @@ The full outputs, with source code and live Strudel links, are below:
     [Listen on Strudel](https://strudel.cc/#Ly8gIkRpZ2l0YWwgUHJlbHVkZSBpbiBBIE1pbm9yIiAoRmluYWwgVmVyc2lvbikKCi8vIDEuIEhhcm1vbmljIHByb2dyZXNzaW9uCi8vIFVzZSBbXSB0byBwbGF5IG5vdGVzIHRvZ2V0aGVyIGFzIGEgY2hvcmQKY29uc3QgY2hvcmRzID0gbm90ZSgiW2EzLGM0LGU0XSBbZjMsYTMsYzRdIFtjMyxlMyxnM10gW2czLGIzLGQ0XSIpCiAgLnMoInBpYW5vIikKICAudmVsb2NpdHkoMC40KQogIC5zbG93KDIpCiAgLnJvb20oMC44KQoKLy8gMi4gUm9sbGluZyBhcnBlZ2dpbwpjb25zdCBhcnBlZ2dpbyA9IG5vdGUoImEyIGUzIGEzIGM0IGYyIGMzIGYzIGEzIGMzIGczIGM0IGU0IGcyIGQzIGczIGIzIikKICAucygicGlhbm8iKQogIC52ZWxvY2l0eSgwLjUpCiAgLnN1c3RhaW4oMC41KQogIC5zbG93KDIpCgovLyAzLiBNZWxvZHkKLy8gfiBpcyB0aGUgc3ltYm9sIGZvciBhIHJlc3Qvc2lsZW5jZQpjb25zdCBtZWxvZHkgPSBub3RlKCJjNSB%2BIGI0IH4gYTQgZzQgZTQgfiBmNCB%2BIGU0IH4gZDQgfiBiMyB%2BIikKICAucygicGlhbm8iKQogIC52ZWxvY2l0eSgwLjgpCiAgLnNsb3coNCkKICAuZGVsYXkoMC41KQoKLy8gNC4gU3RhY2sgdGhlbSB0b2dldGhlciAobm8gLnBsYXkoKSBuZWVkZWQpCnN0YWNrKAogIGNob3JkcywKICBhcnBlZ2dpbywKICBtZWxvZHkKKQ%3D%3D)
     </details>
 *   **Anthropic Claude:** Opus 4.5 High Thinking produced 2 working results with 1 prompt. Sonnet 4.5 Thinking produced 1 working composition and 1 silent composition with 1 prompt.
-    <details>
+    <details markdown="1">
     <summary>Opus 4.5 High Thinking produced 1-shot response, very short and very repetitive.</summary>
     ```javascript
     // Classical Composition - "Baroque Dreams"
@@ -161,7 +161,7 @@ The full outputs, with source code and live Strudel links, are below:
     [Listen on Strudel](https://strudel.cc/#c2V0Y3BtKDEwOC80KQoKbGV0IGNob3JkcyA9IGNob3JkKGA8QyBBbSBEbSBHNyBDIEYgRzcgQyBBbSBEbSBHNyBDIEYgRG0gRzcgQz5gKQoKLy8gc3RyaW5ncyBwYWQKJDogY2hvcmRzLm1vZGUoImJlbG93OmM1Iikudm9pY2luZygpCiAgLnNvdW5kKCJnbV9zeW50aF9zdHJpbmdzXzEiKS5nYWluKDAuMjIpCiAgLnJvb20oMC42KS5zaXplKDAuODUpLnJlbGVhc2UoMS4yKQoKLy8gbGVmdC1oYW5kIEFsYmVydGkgYmFzcyAocGlhbm8pCiQ6IG4oIjAgMiAxIDIiKS5mYXN0KDIpCiAgLnNldChjaG9yZHMpLm1vZGUoInJvb3Q6YzIiKS52b2ljaW5nKCkKICAuc291bmQoInBpYW5vIikuZ2FpbigwLjU1KS5jbGlwKDAuOSkKCi8vIHJpZ2h0LWhhbmQgbWVsb2R5IChwaWFubykKbGV0IG1lbG9keSA9IG4oYDxbMiA0IDUgNF0gWzUgNCAzIDRdIFsxIDIgMyA0XSBbNCAzIDIgNF0KWzUgNiA3IDZdIFszIDQgNSA0XSBbMiAzIDQgM10gWzIgMSAwQDIgLV0KWzUgNyA2IDVdIFsxIDMgMiAxXSBbNCAzIDIgMV0gWzAgMiA0IDJdClszIDUgNCAzXSBbMiAxIDAgMV0gWzQgNiA1IDRdIFsyIDEgMEAzIC1dPmApCiQ6IG1lbG9keS5zY2FsZSgiQzU6bWFqb3IiKQogIC5zb3VuZCgicGlhbm8iKS5nYWluKDAuODUpLmNsaXAoMS4xKQogIC5yb29tKDAuMzUpLnNpemUoMC42NSk%3D)
     </details>
 
-    <details>
+    <details markdown="1">
     <summary>Opus 4.5 High Thinking produced 1-shot response, short, but sounds nicer than the first piece. The chord is dead code and never executes.</summary>
     ```javascript
     // "Moonlit Minuet" - Classical Waltz
@@ -214,7 +214,7 @@ The full outputs, with source code and live Strudel links, are below:
     [Listen on Strudel](https://strudel.cc/#Ly8gIk1vb25saXQgTWludWV0IiAtIENsYXNzaWNhbCBXYWx0egpzZXRjcHMoMC40KQoKLy8gQ2hvcmQgcHJvZ3Jlc3Npb24gKHN0cmluZ3MgZW5zZW1ibGUpCiQ6IGNob3JkKCI8QzQgRTQgRzQ%2BIDxHMyBCMyBEND4gPEEzIEM0IEU0PiA8RjMgQTMgQzQ%2BIikKICAudm9pY2luZygpCiAgLnMoInNhd3Rvb3RoIikKICAubHBmKDE1MDApCiAgLmRlY2F5KDAuNSkKICAuc3VzdGFpbigwLjQpCiAgLnJlbGVhc2UoMC42KQogIC5nYWluKDAuMykKICAucm9vbSgwLjUpCiAgLnNsb3coMikKCi8vIE1lbG9keSBsaW5lCiQ6IG5vdGUoImc0IGE0IGI0IGM1IGQ1IGM1IGI0IGE0IGc0IH4gfiB%2BIikKICAucygic2luZSIpCiAgLmxwZig0MDAwKQogIC5kZWNhYygwLjIpCiAgLnN1c3RhaW4oMC41KQogIC5yZWxlYXNlKDAuNCkKICAuZ2FpbigwLjQpCiAgLnJvb20oMC40KQogIC5kZWxheSgwLjE1KQoKLy8gV2Fsa2luZyBiYXNzCiQ6IG5vdGUoImMyIGUyIGcyIGUyIGcyIGIyIGQzIGIyIGEyIGMzIGUzIGMzIGYyIGEyIGMzIGEyIikKICAucygic2F3dG9vdGgiKQogIC5scGYoNjAwKQogIC5kZWNhYygwLjMpCiAgLnN1c3RhaW4oMC41KQogIC5nYWluKDAuNDUpCiAgLnJvb20oMC4zKQogIC5zbG93KDIpCgovLyBPcm5hbWVudGFsIHRyaWxscwokOiBub3RlKCJnNSBhNSBnNSB%2BIH4gfiBiNSBjNiBiNSB%2BIH4gfiIpCiAgLnMoInRyaWFuZ2xlIikKICAubHBmKDUwMDApCiAgLmRlY2F5KDAuMDUpCiAgLnN1c3RhaW4oMC4xKQogIC5yZWxlYXNlKDAuMTUpCiAgLmdhaW4oMC4yKQogIC5yb29tKDAuNikKICAuZmFzdCgyKQ%3D%3D)
     </details>
 
-    <details>
+    <details markdown="1">
     <summary>Sonnet 4.5 Thinking created 1-shot short composition that sounded suspiciously familiar.</summary>
     ```javascript
     // Classical Piano Piece in Strudel
@@ -243,7 +243,7 @@ The full outputs, with source code and live Strudel links, are below:
     [Listen on Strudel](https://strudel.cc/#Ly8gQ2xhc3NpY2FsIFBpYW5vIFBpZWNlIGluIFN0cnVkZWwKLy8gSW5zcGlyZWQgYnkgYmFyb3F1ZS9jbGFzc2ljYWwgY291bnRlcnBvaW50CgpzdGFjaygKICAvLyBNYWluIG1lbG9keSAocmlnaHQgaGFuZCkgLSBpbnNwaXJlZCBieSBCYWNoLXN0eWxlIGludmVudGlvbgogIG5vdGUoImM1IGQ1IGU1IGY1IGc1IGY1IGU1IGQ1IikKICAgIC5zKCJwaWFubyIpCiAgICAudmVsb2NpdHkoMC43KQogICAgLnNsb3coMiksCiAgCiAgLy8gQ291bnRlciBtZWxvZHkgKGxlZnQgaGFuZCkKICBub3RlKCJjMyBnMyBlMyBnMyBjMyBnMyBlMyBnMyIpCiAgICAucygicGlhbm8iKQogICAgLnZlbG9jaXR5KDAuNSkKICAgIC5zbG93KDIpLAogIAogIC8vIEJhc3MgbGluZQogIG5vdGUoImMyIGMyIGcyIGcyIikKICAgIC5zKCJwaWFubyIpCiAgICAudmVsb2NpdHkoMC42KQogICAgLnNsb3coNCkKKS5zbG93KDEuNSk%3D)
     </details>
 
-    <details>
+    <details markdown="1">
     <summary>Sonnet 4.5 Thinking created 1-shot composition that was absolutely silent, but executing code.</summary>
     ```javascript
     // Classical String Quartet Style
@@ -275,7 +275,7 @@ The full outputs, with source code and live Strudel links, are below:
 
 *   **OpenAI:** GPT-5.2 and GPT-5.2 Codex both managed to 1-shot the more complicated lengthier compositions of this experiment. They were both the runaway winners.
 
-    <details>
+    <details markdown="1">
     <summary>GPT-5.2 XHigh a complex and longer composition done in 1-shot</summary>
 
     ```javascript
@@ -305,7 +305,7 @@ The full outputs, with source code and live Strudel links, are below:
     [Listen on Strudel](https://strudel.cc/#c2V0Y3BtKDEwOC80KQoKbGV0IGNob3JkcyA9IGNob3JkKGA8QyBBbSBEbSBHNyBDIEYgRzcgQyBBbSBEbSBHNyBDIEYgRG0gRzcgQz5gKQoKLy8gc3RyaW5ncyBwYWQKJDogY2hvcmRzLm1vZGUoImJlbG93OmM1Iikudm9pY2luZygpCiAgLnNvdW5kKCJnbV9zeW50aF9zdHJpbmdzXzEiKS5nYWluKDAuMjIpCiAgLnJvb20oMC42KS5zaXplKDAuODUpLnJlbGVhc2UoMS4yKQoKLy8gbGVmdC1oYW5kIEFsYmVydGkgYmFzcyAocGlhbm8pCiQ6IG4oIjAgMiAxIDIiKS5mYXN0KDIpCiAgLnNldChjaG9yZHMpLm1vZGUoInJvb3Q6YzIiKS52b2ljaW5nKCkKICAuc291bmQoInBpYW5vIikuZ2FpbigwLjU1KS5jbGlwKDAuOSkKCi8vIHJpZ2h0LWhhbmQgbWVsb2R5IChwaWFubykKbGV0IG1lbG9keSA9IG4oYDxbMiA0IDUgNF0gWzUgNCAzIDRdIFsxIDIgMyA0XSBbNCAzIDIgNF0KWzUgNiA3IDZdIFszIDQgNSA0XSBbMiAzIDQgM10gWzIgMSAwQDIgLV0KWzUgNyA2IDVdIFsxIDMgMiAxXSBbNCAzIDIgMV0gWzAgMiA0IDJdClszIDUgNCAzXSBbMiAxIDAgMV0gWzQgNiA1IDRdIFsyIDEgMEAzIC1dPmApCiQ6IG1lbG9keS5zY2FsZSgiQzU6bWFqb3IiKQogIC5zb3VuZCgicGlhbm8iKS5nYWluKDAuODUpLmNsaXAoMS4xKQogIC5yb29tKDAuMzUpLnNpemUoMC42NSk%3D)
     </details>
 
-    <details>
+    <details markdown="1">
     <summary>GPT-5.2 Codex XHigh a complex and longer composition done in 1-shot that would feel at home as a video game midi background track.</summary>
 
     ```javascript
@@ -351,7 +351,7 @@ The full outputs, with source code and live Strudel links, are below:
 
 *   **xAI Grok:** Each of the tested grok models managed to generate a composition, though the results were too noisy and chaotic.
 
-    <details>
+    <details markdown="1">
     <summary>Grok 4.1 Thinking created this loud composition in 1-shot, it feels like it could be a part of a much larger professional piece.</summary>
 
     ```javascript
@@ -377,7 +377,7 @@ The full outputs, with source code and live Strudel links, are below:
     [Listen on Strudel](https://strudel.cc/#c2V0Y3BzKDAuNikKCnN0YWNrKAogIC8vIEdyb3VuZCBib3NzIChzbG93LCBzdXN0YWluZWQgcm9vdHMpCiAgbm90ZSgiPGQyIGEyIGIyIGZpczIgZzIgZDIgZzIgYTI%2BIikuc2xvdygyKS5zKCJwaWFubyIpLmxlZ2F0bygxKS5nYWluKDEuMiksCgogIC8vIExheWVyZWQgYXJwZWdnaW9zIChzdGFnZ2VyZWQgZm9yIHJpY2huZXNzLCBjaGFuZ2luZyBwZXIgY2hvcmQpCiAgc3RhY2soCiAgICBub3RlKCI8ZDQgZnM0IGE0IGQ1PiA8ZTQgYTQgY3M1IGU1PiA8ZnM0IGI0IGQ1IGZzNT4gPGZpczQgYTQgY3M1IGZpczU%2BIDxnNCBiNCBkNSBnNT4gPGZzNCBhNCBkNSBmczU%2BIDxnNCBiNCBkNSBnNT4gPGE0IGNzNSBlNSBhNT4iKS5mYXN0KDgpLAog샨bm90ZSgiPGZzNCBhNCBkNSBmczU%2BIDxhNCBjczUgZTUgYTU%2BIDxiNCBkNSBmczUgYjU%2BIDxhNCBjczUgZmlzNSBhNT4gPGI0IGQ1IGc1IGI1PiA8YTQgZDUgZnM1IGE1PiA8YjQgZDUgZzUgYjU%2BIDxjczUgZTUgYTUgY3M2PiIpLmZhc3QoOCkubGF0ZSgwLjEyNSksCiAgICBub3RlKCI8YTQgZDUgZnM1IGE1PiA8Y3M1IGU1IGE1IGNzNj4gPGQ1IGZzNSBiNSBkNj4gPGNzNSBmaXM1IGE1IGNzNj4gPGQ1IGc1IGI1IGQ2PiA8ZDUgZnM1IGE1IGQ2PiA8ZDUgZzUgYjUgZDY%2BIDxlNSBhNSBjczYgZTY%2BIikuZmFzdCg4KS5sYXRlKDAuMjUpCiAgKS5zKCJwaWFubyIpLmdhaW4oMC43KSwKCiAgLy8gQ2Fub25pYyBtZWxvZHkgZW50cmllcyAodmlvbGluLWxpa2UgbGluZXMgZW50ZXJpbmcgc2VxdWVudGlhbGx5KQogIG5vdGUoImE1IGZzNSBkNSBmczUgZTUgY3M1IGQ1IGI0IGNzNSBhNCBiNCBnNCBhNCBmczQgZzQgZTQiKS5zKCJwaWFubyIpLmdhaW4oMC45KS5sYXRlKDgpLAogIG5vdGUoImE1IGZzNSBkNSBmczUgZTUgY3M1IGQ1IGI0IGNzNSBhNCBiNCBnNCBhNCBmczQgZzQgZTQiKS5zKCJwaWFubyIpLmdhaW4oMC45KS5sYXRlKDE2KSwKICBub3RlKCJhNSBmczUgZDUgZnM1IGU1IGNzNSBkNSBiNCBjczUgYTQgYjQgZzQgYTQgZnM0IGc0IGU0IikucygicGlhbm8iKS5nYWluKDAuOSkubGF0ZSgyNCkKKS5yb29tKDAuOCkuZGVsYXkoMC40KQ%3D%3D)
     </details>
 
-    <details>
+    <details markdown="1">
     <summary>Grok code fast 1 managed to 1-shot this unlistenable noisy composition that crashes strudel for me if I play it too long.</summary>
 
     ```javascript
@@ -415,7 +415,7 @@ The full outputs, with source code and live Strudel links, are below:
 
 *   **The Epilogue:** Claude Opus 4.6 and GPT 5.3 Codex were both recently released on February 5th, 2026.
 
-    <details>
+    <details markdown="1">
     <summary>Opus 4.6 High Thinking was a noticeably upgrade where it now 1-shot compositions like GPT 5.2 or GPT 5.2 Codex did.</summary>
 
     ```javascript
@@ -483,7 +483,7 @@ The full outputs, with source code and live Strudel links, are below:
     [Listen on Strudel](https://strudel.cc/#Ly8gIlJldmVyaWUgaW4gRCBtaW5vciIg4oCUIEEgQ2xhc3NpY2FsIENvbXBvc2l0aW9uIGZvciBTdHJ1ZGVsCi8vIEluc3BpcmVkIGJ5IEJhcm9xdWUgY291bnRlcnBvaW50IGFuZCBDbGFzc2ljYWwtZXJhIGhhcm1vbnkKCnNldGNwcygwLjQ4KQoKLy8gU29wcmFubyBtZWxvZHkg4oCUIGx5cmljYWwsIHNpbmdpbmcgbGluZQpsZXQgc29wcmFubyA9IG5vdGUoCiAgYDxbZDUgZTUgZjUgZzVdIFthNSB%2BIGc1IGY1XSBbZTUgZjUgZzUgYTVdIFtmNSB%2BIGU1IGQ1XQogICBbYyM1IGQ1IGU1IGY1XSBbZzUgfiBmNSBlNV0gW2Y1IGU1IGQ1IGMjNV0gW2Q1IH4gfiB%2BXQogICBbYTQgYmI0IGM1IGQ1XSBbZTUgZjUgZzUgZjVdIFtlNSBkNSBjNSBiYjRdIFthNCB%2BIGc0IGE0XQogICBbYmI0IGM1IGQ1IGU1XSBbZjUgZTUgZDUgYyM1XSBbZDUgZTUgZjUgZTVdIFtkNSB%2BIH4gfl0%2BYAopCiAgLnMoInRyaWFuZ2xlIikKICAubHBmKHNpbmUucmFuZ2UoMTUwMCwgMzUwMCkuc2xvdygxNikpCiAgLmF0dGFjaygwLjAxKS5kZWNheSgwLjI1KS5zdXN0YWluKDAuNTUpLnJlbGVhc2UoMC41KQogIC5nYWluKDAuNSkKICAucm9vbSgwLjUpLnNpemUoMC43KQogIC5kZWxheSgwLjEyKS5kZWxheXRpbWUoMC4zNzUpLmRlbGF5ZmVlZGJhY2soMC4yKQoKLy8gQWx0byDigJQgZ2VudGxlIGlubmVyIHZvaWNlIHByb3ZpZGluZyBoYXJtb25pYyBjb2xvcgpsZXQgYWx0byA9IG5vdGUoCiAgYDxbYTQgfiBhNCB%2BXSBbZjQgfiBlNCB%2BXSBbYzQgfiBlNCB%2BXSBbZDQgfiB%2BIH5dCiAgIFtlNCB%2BIGU0IH5dIFtlNCB%2BIGMjNCB%2BXSBbZDQgfiBhMyB%2BXSBbYTQgfiB%2BIH5dCiAgIFtmNCB%2BIGY0IH5dIFtnNCB%2BIGE0IH5dIFtnNCB%2BIGU0IH5dIFtmNCB%2BIGU0IH5dCiAgIFtkNCB%2BIGU0IH5dIFthNCB%2BIGE0IH5dIFthNCB%2BIGE0IH5dIFtmNCB%2BIH4gfl0%2BYAopCiAgLnMoInRyaWFuZ2xlIikKICAubHBmKDE2MDApCiAgLmF0dGFjaygwLjA1KS5kZWNheSgwLjMpLnN1c3RhaW4oMC40KS5yZWxlYXNlKDAuNikKICAuZ2FpbigwLjI4KQogIC5yb29tKDAuNSkuc2l6ZSgwLjYpCgovLyBCYXNzIOKAlCBzdGF0ZWx5LCBjZWxsby1saWtlIGZvdW5kYXRpb24KbGV0IGJhc3MgPSBub3RlKAogIGA8W2QzIH4gYTIgfl0gW2QzIH4gYzMgfl0gW2MzIH4gYzMgfl0gW2QzIH4gZDMgfl0KICAgW2EyIH4gYTIgfl0gW2JiMiB%2BIGEyIH5dIFtkMyB%2BIGEyIH5dIFtkMyB%2BIH4gfl0KICAgW2YyIH4gZjIgfl0gW2MzIH4gYzMgfl0gW2MzIH4gYzMgfl0gW2YyIH4gYzMgfl0KICAgW2JiMiB%2BIGJiMiB%2BXSBbYTIgfiBhMiB%2BXSBbZDMgfiBhMiB%2BXSBbZDMgfiB%2BIH5dPmAKKQogIC5zKCJzYXd0b290aCIpCiAgLmxwZig3MDApCiAgLmF0dGFjaygwLjAyKS5kZWNheSgwLjM1KS5zdXN0YWluKDAuNjUpLnJlbGVhc2UoMC42KQogIC5nYWluKDAuNDIpCiAgLnJvb20oMC40KS5zaXplKDAuNSkKCi8vIFN1c3RhaW5lZCBjaG9yZHMg4oCUIG9yZ2FuLWxpa2UgcGFkcyBmb3Igd2FybXRoCmxldCBjaG9yZHMgPSBub3RlKAogIGA8W2Q0LGY0LGE0XSBbZDQsZjQsYTRdIFtjNCxlNCxhNF0gW2Q0LGY0LGE0XQogICBbYyM0LGU0LGE0XSBbYmIzLGQ0LGc0XSBbYTMsZDQsZjRdIFthMyxkNCxmNF0KICAgW2M0LGY0LGE0XSBbYzQsZTQsZzRdIFtjNCxlNCxnNF0gW2M0LGY0LGE0XQogICBbYmIzLGQ0LGY0XSBbYTMsYyM0LGU0XSBbYTMsZDQsZjRdIFthMyxkNCxmNF0%2BYAopCiAgLnMoInRyaWFuZ2xlIikKICAubHBmKDEyMDApCiAgLmF0dGFjaygwLjE1KS5kZWNheSgwLjUpLnN1c3RhaW4oMC41KS5yZWxlYXNlKDEuMCkKICAuZ2FpbigwLjE4KQogIC5yb29tKDAuNykuc2l6ZSgwLjgpCiAgLnNsb3coMikKCnN0YWNrKHNvcHJhbm8sIGFsdG8sIGJhc3MsIGNob3Jkcyk%3D)
     </details>
 
-    <details>
+    <details markdown="1">
     <summary>Codex 5.3 XHigh is still the king of strudel music generation with a noticeable improvement over its 5.2 models.</summary>
 
     ```javascript
