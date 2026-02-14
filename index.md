@@ -2,6 +2,14 @@ Thoughts and insights about technology, software development, and more.
 
 ## Latest Posts
 
+### Mirrors, Not Ghosts: The Intelligence is in the Data, Stupid
+*Michael Kotlikov - February 12, 2026*
+
+Are LLMs actually intelligent, or just high-tech mirrors? A look at how they fail at simple pattern languages like Strudel and what that means for AI safety.
+
+[Read more](./posts/2026-02-12-mirrors-not-ghosts-the-intelligence-is-in-the-data-stupid.md)
+
+
 ### Doombuilding - Welcome to the era of TikTok for apps
 *Michael Kotlikov - February 1, 2026*
 
