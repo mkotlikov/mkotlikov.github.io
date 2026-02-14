@@ -4,7 +4,9 @@
 
 Every few weeks, a new model drops and the benchmarks go up. Coding scores climb. Reasoning evals tick higher. The implication is always the same: we're getting closer to *real intelligence*.
 
-But I had a nagging question. If these models truly *understand* logic—if they possess an abstract, reasoning-based grasp of concepts like loops, functions, and state—then they shouldn't need a billion examples to write code in a new language. Hand them the syntax rules, and they should figure it out. That's what intelligence *is*: transfer learning.
+Andrej Karpathy [has described](https://x.com/karpathy/status/1973435013875314729) LLMs as a new kind of entity in the intelligence space — "distinct from animals, more like ghosts or spirits" — prepackaged with intelligence not by evolution, but by predicting the next token over the internet. It's a compelling framing. But are they really ghosts? Or something less spooky?
+
+I had a nagging question. If these models truly *understand* logic — if they possess an abstract, reasoning-based grasp of concepts like loops, functions, and state — then they shouldn't need a billion examples to write code in a new language. Hand them the syntax rules, and they should figure it out. That's what intelligence *is*: transfer learning.
 
 To test this, I looked at [strudel.cc](https://strudel.cc).
 
@@ -540,7 +542,7 @@ So why do models that can scaffold an entire React app struggle to write a 30-se
 
 Because they haven't seen enough *Strudel-specific* examples. The issue isn't complexity — it's familiarity. When you look at the results, the pattern is unmistakable: performance correlates almost perfectly with how much Strudel-like data likely appeared in the training set. The massive frontier models (GPT-5.2, Codex) succeed because they've probably ingested more of the internet — including whatever Strudel examples exist. The smaller or more specialized models crack.
 
-The follow-up results hammer this home. Opus 4.6 and Codex 5.3, released just weeks after the original test, showed marked improvement. Did they suddenly learn to *reason about music*? No. They got trained on more data. The mirror got sharper, but it's still a mirror.
+The follow-up results hammer this home. Opus 4.6 and Codex 5.3, released just weeks after the original test, showed marked improvement. Did they suddenly learn to *reason about music*? No. They got trained on more data.
 
 ## No Ghosts, Just Mirrors
 
@@ -549,6 +551,8 @@ I've come to a conclusion: LLMs aren't full of ghosts. They're mirrors.
 They don't *understand* music or code in any sentient sense. They reflect the data we've fed them. They show us what we do the most by excelling at it. A billion Python loops in the training set? Mirrored perfectly. A handful of Strudel snippets? They crack.
 
 They are the true successor to tab-complete — staggeringly powerful tab-complete that lets us skip the tedium and get straight to the interesting parts. But they aren't *thinking*. When Gemini fails to write Strudel despite clearly knowing the syntax exists, it's evidence that transfer learning — the hallmark of actual intelligence — is still largely missing.
+
+The mirror is getting sharper with every generation. But it's still a mirror.
 
 This doesn't make them useless. Far from it. It makes them the most powerful productivity tool ever created. But we should be honest about what they are: interpolation engines, not reasoning engines. Incredible at filling in patterns they've seen. Lost when they haven't.
 
