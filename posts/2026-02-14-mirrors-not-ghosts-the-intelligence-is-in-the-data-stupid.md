@@ -36,6 +36,7 @@ Here's the scorecard:
 The full outputs, with source code and live Strudel links, are below:
 
 *   **Google Gemini:** Both Gemini 3 Flash and Gemini 3 Pro were unable to 1-shot a working composition.
+
     <details markdown="1">
     <summary>Gemini 3 Flash required 9 LLM iterations to produce working code, which was completely silent. Very unimpressive for the Gemini 3 model that's supposedly the best at coding.</summary>
 
@@ -67,6 +68,7 @@ The full outputs, with source code and live Strudel links, are below:
     ```
     [Listen on Strudel](https://strudel.cc/#Ly8gMS4gRGVmaW5lIGEgc2ltcGxlIGNob3JkIHNlcXVlbmNlCmNvbnN0IGNob3JkcyA9IG4oImdtIGM6bWluIGQ6NyBnbSIpLnNsb3coNCk7CgovLyAyLiBUaGUgQmFzc2xpbmUgKEFycGVnZ2lhdGVkKQovLyBXZSB1c2UgLmFycCgpIGluc3RlYWQgb2YgLnByb2dyZXNzaW9uKCkKY29uc3QgYmFzcyA9IGNob3JkcwogIC5hcnAoImRvd24iKQogIC5hZGQoLTEyKSAvLyBEcm9wIGl0IGFuIG9jdGF2ZQogIC5zKCJnbV9jZWxsbyIpCiAgLmdhaW4oMC44KQogIC5scGYoMTAwMCk7CgovLyAzLiBUaGUgTWVsb2R5Ci8vIFVzaW5nIGEgc2ltcGxlIHNlcXVlbmNlIGluIEcgTWlub3IKY29uc3QgbWVsb2R5ID0gbm90ZSgiMCAyIDMgNSA3IDggMTAgMTIiLnNjYWxlKCJnOm1pbm9yIikpCiAgLnNlZ21lbnQoOCkKICAucygiZ21fdmlvbGluIikKICAuZ2FpbigwLjYpOwoKLy8gNC4gQ29tYmGluZQpzdGFjaygKICBiYXNzLAogIG1lbG9keQopLnJvb20oMC41KQ%3D%3D)
     </details>
+
     <details markdown="1">
     <summary>Gemini 3 Pro required 2 LLM iterations to produce working code, it was short, but good.</summary>
 
@@ -105,7 +107,9 @@ The full outputs, with source code and live Strudel links, are below:
     ```
     [Listen on Strudel](https://strudel.cc/#Ly8gIkRpZ2l0YWwgUHJlbHVkZSBpbiBBIE1pbm9yIiAoRmluYWwgVmVyc2lvbikKCi8vIDEuIEhhcm1vbmljIHByb2dyZXNzaW9uCi8vIFVzZSBbXSB0byBwbGF5IG5vdGVzIHRvZ2V0aGVyIGFzIGEgY2hvcmQKY29uc3QgY2hvcmRzID0gbm90ZSgiW2EzLGM0LGU0XSBbZjMsYTMsYzRdIFtjMyxlMyxnM10gW2czLGIzLGQ0XSIpCiAgLnMoInBpYW5vIikKICAudmVsb2NpdHkoMC40KQogIC5zbG93KDIpCiAgLnJvb20oMC44KQoKLy8gMi4gUm9sbGluZyBhcnBlZ2dpbwpjb25zdCBhcnBlZ2dpbyA9IG5vdGUoImEyIGUzIGEzIGM0IGYyIGMzIGYzIGEzIGMzIGczIGM0IGU0IGcyIGQzIGczIGIzIikKICAucygicGlhbm8iKQogIC52ZWxvY2l0eSgwLjUpCiAgLnN1c3RhaW4oMC41KQogIC5zbG93KDIpCgovLyAzLiBNZWxvZHkKLy8gfiBpcyB0aGUgc3ltYm9sIGZvciBhIHJlc3Qvc2lsZW5jZQpjb25zdCBtZWxvZHkgPSBub3RlKCJjNSB%2BIGI0IH4gYTQgZzQgZTQgfiBmNCB%2BIGU0IH4gZDQgfiBiMyB%2BIikKICAucygicGlhbm8iKQogIC52ZWxvY2l0eSgwLjgpCiAgLnNsb3coNCkKICAuZGVsYXkoMC41KQoKLy8gNC4gU3RhY2sgdGhlbSB0b2dldGhlciAobm8gLnBsYXkoKSBuZWVkZWQpCnN0YWNrKAogIGNob3JkcywKICBhcnBlZ2dpbywKICBtZWxvZHkKKQ%3D%3D)
     </details>
+
 *   **Anthropic Claude:** Opus 4.5 High Thinking produced 2 working results with 1 prompt. Sonnet 4.5 Thinking produced 1 working composition and 1 silent composition with 1 prompt.
+    
     <details markdown="1">
     <summary>Opus 4.5 High Thinking produced 1-shot response, very short and very repetitive.</summary>
     ```javascript
