@@ -2,6 +2,13 @@ Thoughts and insights about technology, software development, and more.
 
 ## Latest Posts
 
+### The Darkest Knight: A Batman Fan Fiction
+*Michael Kotlikov - February 15, 2026*
+
+A gritty look at Gotham's corporate corruption and the reality of the Batman's role in the city's hierarchy.
+
+[Read more](./posts/2026-02-15-the-darkest-knight-a-batman-fan-fiction.md)
+
 ### Mirrors, Not Ghosts: The Intelligence is in the Data, Stupid
 *Michael Kotlikov - February 14, 2026*
 
