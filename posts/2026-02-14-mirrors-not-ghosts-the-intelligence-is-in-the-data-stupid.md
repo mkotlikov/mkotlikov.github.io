@@ -8,15 +8,15 @@ Every few weeks, a new model drops and the benchmarks go up. Coding scores climb
 
 Andrej Karpathy [has described](https://x.com/karpathy/status/1973435013875314729) LLMs as a new kind of entity in the intelligence space — "distinct from animals, more like ghosts or spirits" — prepackaged with intelligence not by evolution, but by predicting the next token over the internet. It's a compelling framing. But are they really ghosts? Or something less spooky?
 
-I had a nagging question. If these models truly *understand* logic — if they possess an abstract, reasoning-based grasp of concepts like loops, functions, and state — then they shouldn't need a billion examples to write code in a new language. Hand them the syntax rules, and they should figure it out. That's what intelligence *is*: transfer learning.
+I had a nagging question. If these models truly *understand* logic — if they possess an abstract, reasoning-based grasp of concepts like loops, functions, and state — then they shouldn't need a billion examples to write code in a new or obscure language. Likewise, LLMs should have *plenty* of music-related training data. Music theory textbooks, millions of lines of MIDI data, centuries of documented compositions. Music is one of the most well-documented human endeavors in existence. For these reasons, if you ask them to write music in an obscure language, they should figure it out. That's what intelligence *is*: transfer learning.
 
 To test this, I looked at [strudel.cc](https://strudel.cc).
 
-For the uninitiated, Strudel is a live-coding music environment that ports the TidalCycles algorithmic pattern language into JavaScript. It's elegant, functional, and niche enough that it hasn't been carpet-bombed across every training set on GitHub. If a model can write Strudel from a cold start, it's reasoning. If it can't, it's just pattern-matching on data it's already seen.
+For the uninitiated, Strudel is a live-coding music environment that ports the TidalCycles algorithmic pattern language into JavaScript. It's elegant, functional, and niche enough that it hasn't been carpet-bombed across every training set on GitHub. While the syntax is more complicated than standard imperative code—relying on complex functional patterns—the actual output required is much shorter than typical one-shot coding benchmarks like snake games or todo apps. We're talking 10-20 lines of code, not hundreds.
 
 ## The Experiment
 
-I put every major SOTA model to the same test: a single prompt — `make a classical composition for strudel.cc` — and one shot to produce code that actually compiles and plays music. No debugging, no follow-ups.
+I put every major SOTA model to the same test: a single prompt — `make a classical composition for strudel.cc` — and one shot to produce code that actually compiles and plays music. I did not provide any additional context, examples, or the strudel documentation. Maybe I should have, but only the Gemini 3 models struggled to 1-shot a working composition. 
 
 Here's the scorecard:
 
@@ -41,6 +41,8 @@ The full outputs, with source code and live Strudel links, are below:
 
     <details markdown="1">
     <summary>Gemini 3 Flash required 9 LLM iterations to produce working code, which was completely silent. Very unimpressive for the Gemini 3 model that's supposedly the best at coding.</summary>
+    
+    > **Note:** Gemini 3 Flash's failure is actually fascinating. It clearly knew the syntax existed—it was trying to use valid Strudel functions—but it couldn't make them work together. It had the pieces (recall) but couldn't solve the puzzle (reasoning). This distinction supports the "lack of reasoning" point even better than models that hallucinated entirely.
 
     ```javascript
     // 1. Define a simple chord sequence
@@ -542,13 +544,13 @@ Here's what makes these results so revealing.
 
 Think about what we're asking these models to do. A page of music is *simpler* than a page of code. Music runs left to right — it's a linear progression. There are no function callbacks, no dependency graphs, no state management across files. A classical composition in Strudel is, structurally, a trivial task compared to the flight simulators, 3D games, and full-stack apps these same models can produce in one shot.
 
-And LLMs should have *plenty* of music-related training data. Music theory textbooks, millions of lines of MIDI data, centuries of documented compositions. Music is one of the most well-documented human endeavors in existence.
-
 So why do models that can scaffold an entire React app struggle to write a 30-second melody in a JavaScript DSL?
 
-Because they haven't seen enough *Strudel-specific* examples. The issue isn't complexity — it's familiarity. When you look at the results, the pattern is unmistakable: performance correlates almost perfectly with how much Strudel-like data likely appeared in the training set. The massive frontier models (GPT-5.2, Codex) succeed because they've probably ingested more of the internet — including whatever Strudel examples exist. The smaller or more specialized models crack.
+Gemini 3 Flash *knew* the syntax existed but couldn't assemble it. 
 
-The follow-up results hammer this home. Opus 4.6 and Codex 5.3, released just weeks after the original test, showed marked improvement. Did they suddenly learn to *reason about music*? No. They got trained on more data.
+The follow-up results hammer this home. Opus 4.6 and Codex 5.3, released just weeks after the original test, showed marked improvement. Though music is subjective, the quality jump was undeniable. They didn't just get the code right; they started making longer, more complex compositions that sounded better. It wasn't just "correct"—it was *better*.
+
+Did they suddenly learn to *reason about music*? No. They got trained on more data.
 
 ## No Ghosts, Just Mirrors
 
