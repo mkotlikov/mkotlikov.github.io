@@ -9,12 +9,14 @@ A gritty look at Gotham's corporate corruption and the reality of the Batman's r
 
 [Read more](./posts/2026-02-15-the-darkest-knight-a-batman-fan-fiction.md)
 
+<!--
 ### Mirrors, Not Ghosts: The Intelligence is in the Data, Stupid
 *Michael Kotlikov - February 14, 2026*
 
 Are LLMs actually intelligent, or just high-tech mirrors? A look at how they fail at simple pattern languages like Strudel and what that means for AI safety.
 
 [Read more](./posts/2026-02-14-mirrors-not-ghosts-the-intelligence-is-in-the-data-stupid.md)
+-->
 
 
 ### Doombuilding - Welcome to the era of TikTok for apps
