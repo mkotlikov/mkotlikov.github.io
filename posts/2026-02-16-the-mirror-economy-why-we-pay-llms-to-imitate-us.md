@@ -128,7 +128,7 @@ So why did we vote with our wallets for the model that didn’t win my “pelica
 
 Because most of what we pay models for isn’t general intelligence. It’s **high-throughput usefulness**.
 
-And that’s where Andrej Karpathy’s “ghost” metaphor clicks — with one extra axis.
+And that’s where [Andrej Karpathy’s “ghost” metaphor](https://karpathy.bearblog.dev/animals-vs-ghosts/) clicks — with one extra axis.
 
 Karpathy’s framing is that LLMs are like **ghosts**: disembodied statistical distillations of human text. Eerie, powerful, not grounded in the world.
 
