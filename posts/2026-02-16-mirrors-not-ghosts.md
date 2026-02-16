@@ -1,63 +1,230 @@
-It started with a distraction—specifically, an ad for Brain.fm. I was fascinated by their claim of using rapid volume modulation to hack focus, so naturally, instead of doing my actual work, I decided to reverse-engineer it.
+---
+layout: post
+title: "Mirrors, Not Ghosts: The Intelligence Is in the Data, Stupid"
+date: 2026-02-16
+author: Michael Kotlikov
+categories: [ai, llms, music, coding]
+tags: [strudel, brainfm, gpt, claude, gemini, grok, benchmarks]
+---
 
-I’m not a musician. My relationship with music usually involves finding a single track in a movie soundtrack and looping it until I absolutely resent it. But I *am* a programmer. So, I built a quick in-browser focus app ([focus.nemitek.com](https://focus.nemitek.com)).
+I didn’t set out to write a blog post about frontier-model generalization. I set out to procrastinate better.
 
-Brain.fm pays real composers to write their underlying tracks. I don't have that skill or budget. But a friend turned me onto [Strudel.cc](https://strudel.cc), a live-coding environment that ports the TidalCycles pattern language into JavaScript.
+It started with a **brain.fm** ad. I’ve always been curious about binaural beats, but what caught my attention wasn’t “binaural” so much as this *aggressive, fast volume modulation* thing they do—almost like a tremolo you can feel in your skull. My brain immediately did the classic developer move:
 
-**And that’s when I realized I had the perfect Turing test.**
+> “I can probably build a jankier version of that.”
 
-Think about what an LLM actually knows. These models have ingested centuries of music theory textbooks. They know the circle of fifths, they’ve parsed millions of MIDI files, and they understand the mathematical structure of a Bach fugue. They possess the *domain knowledge*.
+So I did. I built a little in-browser focus app: **https://focus.nemitek.com**.
 
-But Strudel is a niche, functional language with very little training data online. The models haven't memorized enough of it to cheat.
+Brain.fm pays musicians and then runs algorithms on their music. I do not pay musicians (tragically), so I tried procedural music. Then I added settings. Then feature creep turned it into a small spaceship control panel. And eventually I hit a wall:
 
-To write a Strudel composition, an AI can't just autocomplete code it saw on GitHub. It has to perform a high-wire act of **transfer learning**: it must take its deep, abstract understanding of music theory and translate it, in real-time, into a syntax it barely recognizes. It has to figure it out using logic, not memory.
+**How do I code “real music” that doesn’t sound like a calculator doing slam poetry?**
 
-I put the heavy hitters to the test with a single prompt: `make a classical composition for strudel.cc`.
+A friend turned me on to **strudel.cc**, and it felt like destiny. Strudel is a live-coding music environment (pattern-based, JavaScript-y, super fun). And I had a very 2026 thought:
 
-## The Stochastic Parrot Phase
+> “Any LLM should be able to vibe this.”
 
-I started with **Gemini 3 Flash**, which Google markets as their premier coding engine.
+So I ran an experiment.
 
-It was a disaster. It didn't just fail; it failed because it couldn't reason. It clearly "knew" the syntax existed—it was trying to use valid Strudel functions—but it couldn't connect the dots. It took 9 iterations to get code that didn't crash, and even then, the result was pure silence.
+---
 
-I then tried **Gemini 3 Pro**. It was a grind. It took two full iterations of back-and-forth prompting just to get a short, functional loop running. It wasn't that the model was "dumb"—it clearly knew the syntax existed—but it couldn't reason through the structure without hand-holding. It had the puzzle pieces, but it didn't know how to fit them together.
+## The experiment: “make a classical composition for strudel.cc” (one-shot)
 
-If I had stopped here, my conclusion would have been cynical: *LLMs are just stochastic parrots. There is no Strudel in the training set, so they fail.*
+I used a single prompt:
 
-## The "Smart" Ghost: GPT-5.2 & Codex
+**“make a classical composition for strudel.cc”**
 
-Then I tried **GPT-5.2** and **GPT-5.2 Codex**. This was the shock.
+No docs. No examples. No “here’s the syntax.” Just: *show me you can generalize.*
 
-They didn't just one-shot the code; they wrote complex, multi-voice compositions that sounded like actual video game MIDI tracks. They handled the functional syntax effortlessly. It proved that **General Intelligence is real.** These models successfully transferred logic from other domains to a language they barely knew.
+This wasn’t really a music test. It was a **transfer test**:
 
-And then there was **Claude Opus 4.5**. It also one-shotted the code, but the results were simpler—technically correct, but repetitive and short. It lacked the "ghostly" reasoning depth I saw in the OpenAI models.
+- can you take music knowledge (common in training)
+- and translate it into a niche DSL (probably rare in training)
+- without face-planting?
+
+It’s the same kind of vibe as Simon Willison’s wonderfully weird benchmark:
+
+> **“Generate an SVG of a pelican riding a bicycle.”**  
+> <https://github.com/simonw/pelican-bicycle>
+
+It’s not that pelicans or bicycles are impossible. It’s that the task is *specific enough* to expose whether the model can assemble skills it “sort of” has into something coherent—especially off the well-lit path.
+
+Strudel became my pelican.
+
+---
+
+## Results
+
+### Gemini 3 Flash
+
+This was my “BIG mistake” model.
+
+When it didn’t throw syntax errors, it produced something even funnier: **silence**. Code that looked plausible, executed, and did… nothing. Or it ran but needed so much iteration that I felt like I was teaching it Strudel one paper cut at a time.
+
+In my testing: **completely useless** for this task.
+
+### Gemini 3 Pro
+
+Better, but still not a one-shot machine for me.
+
+With 1–3 rounds of back-and-forth, I could usually get a short, pleasant snippet. Once it *worked*, it could sound nice! But it rarely landed on a playable “composition” immediately.
+
+### Opus 4.5
+
+This is where the vibe changed.
+
+Opus 4.5 would **one-shot working Strudel** reliably. The compositions tended to be on the shorter/repetitive side, but the important thing happened: it crossed the threshold from “arguing with the tool” to “playing with the tool.”
+
+### Sonnet 4.5
+
+Sonnet 4.5 lived in the uncanny valley for this experiment.
+
+Sometimes it hit. Sometimes it ran but felt musically thin. Sometimes it wandered into “technically patterns” without really composing. It was clearly less consistent than Opus 4.5 in my Strudel test… and that fact is about to matter a lot, because…
+
+### GPT-5.2
+
+GPT-5.2 was my “wait, what?” moment.
+
+It reliably one-shot working code, and the results were usually:
+
+- longer  
+- more layered  
+- more structured  
+- more “composition” than “demo loop”
+
+This is the point where my initial cynical take (“LLMs can only do what’s in their training set”) started wobbling.
+
+### GPT-5.2 Codex
+
+Same story, often even more “composed.”
+
+Depending on the run, GPT-5.2 or 5.2 Codex would win, but both consistently gave me the best combination of **works-first-try + substantial output**.
+
+---
 
 ## The Market Paradox: Why We Chose Sonnet 4.5
 
-But here is the fascinating contradiction. throughout late 2025, while GPT-5.2 was demonstrating this superior reasoning capability, the developer world (myself included) was obsessed with **Claude Sonnet 4.5**.
+Here’s the fascinating contradiction.
 
-We voted with our wallets for Sonnet, even though my tests show it was *less* generally intelligent than GPT-5.2. Why?
+Throughout late 2025—while GPT-5.2 was, in my testing, demonstrating **superior generalization**—the developer world (myself included) was obsessed with **Claude Sonnet 4.5**.
 
-**Because right now, we value Data over Intelligence.**
+Sonnet 4.5 launched September 29, 2025 and became *the* “default coding model” vibe for a lot of people.  
+<https://support.claude.com/en/articles/12138966-release-notes>
 
-Sonnet 4.5 "vibed" better. It was trained on a massive corpus of the tedious, repetitive code we write every day (React components, Python scripts, SQL queries). It was a better **Mirror** of our daily grind. GPT-5.2 was "smarter"—it could figure out new things—but for 99% of our jobs, we don't need a genius to figure out new things. We need a really fast intern to do the boring things we already know how to do.
+But my Strudel test strongly suggested Sonnet 4.5 was **less generally intelligent** than GPT-5.2.
 
-We acknowledge the Ghost, but we pay for the Mirror.
+So why did we collectively vote with our wallets for Sonnet?
+
+Because right now, we value **Data over Intelligence**.
+
+Sonnet 4.5 “vibed” better for real work because it was an incredible **Mirror** of our daily grind—React components, Python scripts, SQL queries, the repetitive stuff we write all day. It didn’t need to be a genius. It needed to be a *fast, reliable intern* that could do the boring parts at scale.
+
+GPT-5.2 felt “smarter”—more capable when you step off the path. But for 99% of production work, we’re not asking the model to invent a new language or bridge music theory into a niche DSL. We’re asking it to:
+
+- refactor code  
+- write glue  
+- generate endpoints  
+- fix tests  
+- make the tenth similar component
+
+So yeah:
+
+**We acknowledge the Ghost, but we pay for the Mirror.**
+
+---
+
+## Ghosts vs mirrors (why I’m stealing Karpathy’s ghost and renaming it)
+
+Andrej Karpathy has a metaphor I love: LLMs aren’t “animals,” they’re more like **ghosts**—statistical distillations of humanity’s text, eerie and powerful, but not embodied in the world.
+
+(Reference: Karpathy’s “Animals vs Ghosts” essay)  
+<https://karpathy.bearblog.dev/animals-vs-ghosts/>
+
+That metaphor lands.
+
+But after this Strudel adventure, my vibe is: **mirrors** are the more useful mental model day-to-day.
+
+These systems reflect what humans do a lot of:
+
+- common stacks  
+- common patterns  
+- common formats  
+- common bugs  
+- common tedious work
+
+Where the data is dense, the mirror is crisp.
+
+Where the data is sparse—hello, Strudel—the mirror gets blurry. And that blur is exactly what I was testing.
+
+There *are* sparks of real connection-making (music theory → structure → timing → synthesis), but the boundary of competence still smells like the boundary of the training diet.
+
+---
+
+## Epilogue: February 5th, 2026, two drops ~20 minutes apart
+
+Just as I was finalizing these thoughts, **Claude Opus 4.6** and **GPT-5.3 Codex** dropped on **February 5th, 2026**.
+
+Anthropic announcement:  
+<https://www.anthropic.com/news/claude-opus-4-6>
+
+And things got… interesting.
+
+### Opus 4.6
+
+Opus 4.6 felt like a real jump. Not a “new vibe,” but a *capability* shift: longer, more confident, more sustained structure—suddenly operating in the tier I’d associated with the GPT-5 class.
+
+Anthropic frames it as better planning, longer agentic tasks, better reliability in larger codebases, and improved debugging/review.
+
+### Codex 5.3
+
+Codex 5.3, in my runs, took another step. The standout wasn’t just correctness—it was musical “taste.” It stepped away from pure electronic/MIDI demo energy and leaned into **strings** as a focal point in a way that felt more mature.
+
+---
 
 ## The Unlock: The Lesson of Opus 4.6
 
-Just as I was finalizing these thoughts, **Claude Opus 4.6** and **GPT-5.3 Codex** dropped on February 5th, 2026. The shift was subtle but profound.
+Here’s the part that messed with my mental model:
 
-Opus 4.6 is a "minor" version upgrade, yet it unlocked a massive jump in capability, suddenly matching the reasoning depth of the GPT-5 class. This suggests something incredibly important about how these models work. 
+Opus 4.6 is a “minor” version bump, yet it unlocked a huge jump in what felt like reasoning depth.
 
-The intelligence didn't just appear overnight. It was likely **hiding in the weights** of Opus 4.5 all along. The base model had the capacity, but it took refined Post-Training and RLHF (Reinforcement Learning from Human Feedback) to unlock it. We aren't just teaching them new facts; we are learning how to access the reasoning capabilities that are already there, dormant.
+That suggests something important: the intelligence didn’t appear overnight. It was likely **already hiding in the weights**.
 
-## The Conclusion: It’s Early Days
+The base model may have had the capacity in Opus 4.5, but it took refined post-training—alignment, preference optimization, RLHF-style shaping—to reliably **access** that capability.
 
-My test results point to a clear reality: **LLMs do think, and they do reason, but it is very early days.**
+In other words: we’re not just teaching models new facts.
 
-While GPT-5.3 Codex can write a beautiful string quartet snippet, no model could generate a full, multi-minute song with structural progression. The reasoning is brittle. It can sprint, but it can't run a marathon.
+We’re learning how to *pull* the best thinking that’s already in there out to the surface, consistently.
 
-We are currently in a phase where we prioritize the utility of the Mirror—the ability to recall and format vast amounts of data. But the reasoning capability is real, it is emergent, and it is growing. The fact that a minor version update can "unlock" such a leap in quality suggests that we haven't even scratched the surface of what these current weights are capable of.
+And that’s wild, because it reframes progress: sometimes the “new model” isn’t a bigger brain—sometimes it’s a better way to **use** the brain you already had.
 
-The intelligence isn't missing. It's just waking up.
+---
+
+## My rankings
+
+### Ranking before the epilogue (late 2025 / early 2026 testing)
+
+1. **OpenAI GPT-5.2 / GPT-5.2 Codex** (depending on the run, either could win)  
+2. **Claude Opus 4.5** (consistent one-shot, compositions shorter)  
+3. **Grok 4.1 Thinking** (not consistent one-shot, but occasional brilliant chaos)  
+4. **Google Gemini 3 Pro** (never one-shot for me; decent once corrected)  
+5. **Gemini 3 Flash** (nope tier for this benchmark)
+
+### Ranking after Feb 5, 2026
+
+1. **OpenAI Codex 5.3**  
+2. **Anthropic Claude Opus 4.6**  
+3. **xAI Grok Thinking 4.1**  
+4. **Google Gemini 3 Pro**  
+5. **Gemini 3 Flash** (still in time-out)
+
+---
+
+## Data section
+
+*(I’ll paste raw runs here later: prompts, model settings, iteration counts, Strudel links, notes, and subjective ratings.)*
+
+- Prompt(s) used:  
+- Date(s) tested:  
+- Model settings:  
+- Run logs:  
+- Strudel links:  
+- Notes / observations:  
