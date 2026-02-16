@@ -228,15 +228,13 @@ And that’s wild, because it reframes progress: sometimes the “new model” i
 2. **Anthropic Claude Opus 4.5** (consistent one-shot, compositions shorter)  
 3. **xAI Grok 4.1 Thinking** (not consistent one-shot, but occasional brilliant chaos)  
 4. **Google Gemini 3 Pro** (never one-shot for me; decent once corrected)  
-5. **Google Gemini 3 Flash** (nope tier for this benchmark)
 
 ### Ranking after Feb 5, 2026
 
 1. **OpenAI Codex 5.3**  
 2. **Anthropic Claude Opus 4.6**  
 3. **xAI Grok 4.1 Thinking**  
-4. **Google Gemini 3 Pro**  
-5. **Google Gemini 3 Flash** (still in time-out)
+4. **Google Gemini 3 Pro**
 
 ---
 
