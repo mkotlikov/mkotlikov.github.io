@@ -13,13 +13,13 @@ This whole thing started the way many great technical journeys begin:
 
 I saw an ad.
 
-It was for **brain.fm**. I’ve always been curious about binaural beats, but what caught my attention wasn’t “binaural” so much as this *aggressive, fast volume modulation* thing they do—almost like a tremolo you can feel in your skull. My brain immediately did the classic developer move:
+It was for **[brain.fm](https://www.brain.fm)**. I’ve always been curious about binaural beats, but what caught my attention wasn’t “binaural” so much as this *aggressive, fast volume modulation* thing they do—almost like a tremolo you can feel in your skull. My brain immediately did the classic developer move:
 
 > “I can probably build a jankier version of that.”
 
 So I did. I built a little in-browser focus app: <https://focus.nemitek.com>.
 
-Brain.fm pays musicians and then runs algorithms on their music. I do not pay musicians (tragically), so I tried procedural music. Then I added settings. Then feature creep turned it into a small spaceship control panel. And eventually I hit a wall:
+[brain.fm](https://www.brain.fm) pays musicians and then runs algorithms on their music. I do not pay musicians (tragically), so I tried procedural music. Then I added settings. Then feature creep turned it into a small spaceship control panel. And eventually I hit a wall:
 
 **How do I code “real music” that doesn’t sound like a printer having a panic attack?**
 
