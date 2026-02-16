@@ -1,15 +1,19 @@
 ---
 layout: post
-title: "Mirrors, Not Ghosts: The Intelligence Is in the Data, Stupid"
+title: "The Mirror Economy: Why We Pay LLMs to Imitate Us"
 date: 2026-02-16
 author: Michael Kotlikov
 categories: [ai, llms, music, coding]
 tags: [strudel, brainfm, gpt, claude, gemini, grok, benchmarks]
 ---
 
-I didn’t set out to write a blog post about frontier-model generalization. I set out to procrastinate better.
+> **TL;DR:** LLMs aren’t paid to be smart — they’re paid to be useful. We buy the best mirror of boring work, not the best explorer off-road. But if you rank “general intelligence” by my Strudel one-shot benchmark: Codex 5.3 and Opus 4.6 sit at the top, Grok 4.1 flashes brilliance with chaos, Gemini 3 Pro needs coaching — while the smaller “frontier” models mostly can’t make the jump: they look right, but they don’t work.
 
-It started with a **brain.fm** ad. I’ve always been curious about binaural beats, but what caught my attention wasn’t “binaural” so much as this *aggressive, fast volume modulation* thing they do—almost like a tremolo you can feel in your skull. My brain immediately did the classic developer move:
+This whole thing started the way many great technical journeys begin:
+
+I saw an ad.
+
+It was for **brain.fm**. I’ve always been curious about binaural beats, but what caught my attention wasn’t “binaural” so much as this *aggressive, fast volume modulation* thing they do—almost like a tremolo you can feel in your skull. My brain immediately did the classic developer move:
 
 > “I can probably build a jankier version of that.”
 
@@ -17,7 +21,7 @@ So I did. I built a little in-browser focus app: **https://focus.nemitek.com**.
 
 Brain.fm pays musicians and then runs algorithms on their music. I do not pay musicians (tragically), so I tried procedural music. Then I added settings. Then feature creep turned it into a small spaceship control panel. And eventually I hit a wall:
 
-**How do I code “real music” that doesn’t sound like a calculator doing slam poetry?**
+**How do I code “real music” that doesn’t sound like a printer having a panic attack?**
 
 A friend turned me on to **strudel.cc**, and it felt like destiny. Strudel is a live-coding music environment (pattern-based, JavaScript-y, super fun). And I had a very 2026 thought:
 
@@ -68,6 +72,18 @@ Better, but still not a one-shot machine for me.
 
 With 1–3 rounds of back-and-forth, I could usually get a short, pleasant snippet. Once it *worked*, it could sound nice! But it rarely landed on a playable “composition” immediately.
 
+### Grok 4.1 Thinking 
+
+The fun kind of chaos.
+
+It stacked a lot of structure quickly (ground bass + layered arps + canon entries), and while it could get overwhelming, I had multiple moments of “ok wait… this could be *part of* a legit larger piece.” It wasn’t consistently a polished composition, but it had flashes of musical ideas that felt *alive*.
+ 
+### Grok Code Fast 1
+
+The classic “fast model” move.
+
+It shipped something that technically runs, but it’s so dense and noisy that it can become a resource hog — in my case it would **crash Strudel if I let it play too long**. Credit where it’s due: it *one-shot* a fugue-ish structure, but the end result was closer to “music generator stress test” than “classical composition.”
+
 ### Opus 4.5
 
 This is where the vibe changed.
@@ -78,7 +94,7 @@ Opus 4.5 would **one-shot working Strudel** reliably. The compositions tended to
 
 Sonnet 4.5 lived in the uncanny valley for this experiment.
 
-Sometimes it hit. Sometimes it ran but felt musically thin. Sometimes it wandered into “technically patterns” without really composing. It was clearly less consistent than Opus 4.5 in my Strudel test… and that fact is about to matter a lot, because…
+Sometimes it hit. Sometimes it plagiarized. Sometimes it ran but felt musically thin. Sometimes it wandered into “technically patterns” without really composing. It was clearly less consistent than Opus 4.5 in my Strudel test… and that fact is about to matter a lot, because…
 
 ### GPT-5.2
 
@@ -103,59 +119,65 @@ Depending on the run, GPT-5.2 or 5.2 Codex would win, but both consistently gave
 
 ## The Market Paradox: Why We Chose Sonnet 4.5
 
-Here’s the fascinating contradiction.
+Here’s the contradiction that made this whole Strudel thing interesting:
 
-Throughout late 2025—while GPT-5.2 was, in my testing, demonstrating **superior generalization**—the developer world (myself included) was obsessed with **Claude Sonnet 4.5**.
+In my little transfer test, GPT-5.2 felt *more generally capable* than Sonnet 4.5.  
+And yet in late 2025, the dev world (me included) collectively defaulted to **Sonnet 4.5**.
 
-Sonnet 4.5 launched September 29, 2025 and became *the* “default coding model” vibe for a lot of people.  
-<https://support.claude.com/en/articles/12138966-release-notes>
+So why did we vote with our wallets for the model that didn’t win my “pelican benchmark”?
 
-But my Strudel test strongly suggested Sonnet 4.5 was **less generally intelligent** than GPT-5.2.
+Because most of what we pay models for isn’t general intelligence. It’s **high-throughput usefulness**.
 
-So why did we collectively vote with our wallets for Sonnet?
+And that’s where Andrej Karpathy’s “ghost” metaphor clicks — with one extra axis.
 
-Because right now, we value **Data over Intelligence**.
-
-Sonnet 4.5 “vibed” better for real work because it was an incredible **Mirror** of our daily grind—React components, Python scripts, SQL queries, the repetitive stuff we write all day. It didn’t need to be a genius. It needed to be a *fast, reliable intern* that could do the boring parts at scale.
-
-GPT-5.2 felt “smarter”—more capable when you step off the path. But for 99% of production work, we’re not asking the model to invent a new language or bridge music theory into a niche DSL. We’re asking it to:
-
-- refactor code  
-- write glue  
-- generate endpoints  
-- fix tests  
-- make the tenth similar component
-
-So yeah:
-
-**We acknowledge the Ghost, but we pay for the Mirror.**
-
----
-
-## Ghosts vs mirrors (why I’m stealing Karpathy’s ghost and renaming it)
-
-Andrej Karpathy has a metaphor I love: LLMs aren’t “animals,” they’re more like **ghosts**—statistical distillations of humanity’s text, eerie and powerful, but not embodied in the world.
-
-(Reference: Karpathy’s “Animals vs Ghosts” essay)  
-<https://karpathy.bearblog.dev/animals-vs-ghosts/>
+Karpathy’s framing is that LLMs are like **ghosts**: disembodied statistical distillations of human text. Eerie, powerful, not grounded in the world.
 
 That metaphor lands.
 
-But after this Strudel adventure, my vibe is: **mirrors** are the more useful mental model day-to-day.
+But day-to-day, what I actually experience is this: LLMs are **mirrors**.
 
-These systems reflect what humans do a lot of:
+Not as a replacement for “ghost,” but as a practical operating model:
 
-- common stacks  
-- common patterns  
-- common formats  
-- common bugs  
-- common tedious work
+- **Ghost** describes what the system *is*: a disembodied text-thing.
+- **Mirror** describes what the system *does for money*: reflects the densest, most standardized, most checkable human work.
 
-Where the data is dense, the mirror is crisp.
+The mirror is sharp where three things are true:
 
-Where the data is sparse—hello, Strudel—the mirror gets blurry. And that blur is exactly what I was testing.
+1. the data is abundant  
+2. the output format is standardized  
+3. correctness is easy to verify (compilers, linters, tests, canonical examples)
 
-There *are* sparks of real connection-making (music theory → structure → timing → synthesis), but the boundary of competence still smells like the boundary of the training diet.
+That is basically the modern software stack.
+
+So the “default coding model” vibe makes perfect sense. For 99% of production work we’re not asking for invention — we’re asking for leverage:
+
+- refactor the same shape of code  
+- generate another endpoint  
+- write the tenth similar React component  
+- glue the API to the DB  
+- fix tests until CI shuts up  
+
+That isn’t “genius mode.” That’s **mirror mode**: fast, reliable reflection of the stuff we do constantly.
+
+And that’s why Sonnet won mindshare. It didn’t need to be the smartest ghost. It needed to be the crispest mirror of the daily grind.
+
+Strudel is where the mirror test gets fun, because it weakens all three conditions:
+
+- the target is low-frequency *as a named DSL*  
+- the right answer is underdetermined (“good music” is subjective)  
+- the feedback loop is weaker (you can run code and still get silence)
+
+Some models clearly “knew Strudel existed” — they reached for plausible functions — but couldn’t consistently make the pieces cohere into sound.
+
+That’s not pure ignorance. It’s a coordination problem: mapping musical intent (structure, harmony, timing) onto a niche tool with just enough quirks to punish guessing.
+
+So yeah:
+
+**We acknowledge the ghost — but we pay for the mirror.**
+
+Because most of the time, the job isn’t to discover new territory.
+
+It’s to ship the same territory… faster.
 
 ---
 
@@ -203,41 +225,22 @@ And that’s wild, because it reframes progress: sometimes the “new model” i
 ### Ranking before the epilogue (late 2025 / early 2026 testing)
 
 1. **OpenAI GPT-5.2 / GPT-5.2 Codex** (depending on the run, either could win)  
-2. **Claude Opus 4.5** (consistent one-shot, compositions shorter)  
-3. **Grok 4.1 Thinking** (not consistent one-shot, but occasional brilliant chaos)  
+2. **Anthropic Claude Opus 4.5** (consistent one-shot, compositions shorter)  
+3. **xAI Grok 4.1 Thinking** (not consistent one-shot, but occasional brilliant chaos)  
 4. **Google Gemini 3 Pro** (never one-shot for me; decent once corrected)  
-5. **Gemini 3 Flash** (nope tier for this benchmark)
+5. **Google Gemini 3 Flash** (nope tier for this benchmark)
 
 ### Ranking after Feb 5, 2026
 
 1. **OpenAI Codex 5.3**  
 2. **Anthropic Claude Opus 4.6**  
-3. **xAI Grok Thinking 4.1**  
+3. **xAI Grok 4.1 Thinking**  
 4. **Google Gemini 3 Pro**  
-5. **Gemini 3 Flash** (still in time-out)
+5. **Google Gemini 3 Flash** (still in time-out)
 
 ---
 
 ## Data section
-
-Here's the scorecard:
-
-| Model | 1-Shot? | Verdict |
-|---|---|---|
-| Gemini 3 Flash | ❌ (9 iterations, silent) | Knew the syntax existed, couldn't make it work |
-| Gemini 3 Pro | ❌ (2 iterations) | Short but decent after fixes |
-| Claude Opus 4.5 High | ✅ (1-shot) | Working but short and repetitive |
-| Claude Sonnet 4.5 | ⚠️ (1 working, 1 silent) | Mixed results |
-| GPT-5.2 | ✅ (1-shot) | Complex, multi-voice, longer compositions |
-| GPT-5.2 Codex | ✅ (1-shot) | Video-game-quality MIDI track |
-| Grok 4.1 Thinking | ✅ (1-shot, noisy) | Ambitious but chaotic |
-| Grok Code Fast 1 | ✅ (1-shot, noisy) | Crashes Strudel if played too long |
-| *Claude Opus 4.6* | *✅ (1-shot)* | *Major improvement over 4.5* |
-| *GPT-5.3 Codex* | *✅ (1-shot)* | *Best in class* |
-
-*Italicized models were released after the initial experiment (Feb 5, 2026) and included as a follow-up.*
-
-The full outputs, with source code and live Strudel links, are below:
 
 *   **Google Gemini:** Both Gemini 3 Flash and Gemini 3 Pro were unable to 1-shot a working composition.
 
