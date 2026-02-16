@@ -1,41 +1,246 @@
-# Mirrors, Not Ghosts: The Intelligence is in the Data, Stupid
+---
+layout: post
+title: "The Mirror Economy: Why We Pay LLMs to Imitate Us"
+date: 2026-02-16
+author: Michael Kotlikov
+categories: [ai, llms, music, coding]
+tags: [strudel, brainfm, gpt, claude, gemini, grok, benchmarks]
+---
 
-*Michael Kotlikov - February 14, 2026*
+> **TL;DR:** LLMs aren’t paid to be smart — they’re paid to be useful. We buy the best mirror of boring work, not the best explorer off-road. But if you rank “general intelligence” by my Strudel one-shot benchmark: Codex 5.3 sits at the top, Opus 4.6 is a close second, Grok 4.1 flashes brilliance with chaos, Gemini 3 Pro needs coaching — while the smaller “frontier” models mostly can’t make the jump: they look right, but they don’t work.
 
-> **TL;DR:** I tested every major SOTA model on Strudel—a niche music DSL with minimal training data—and found that performance tracks data exposure, not reasoning ability. LLMs aren't ghosts with emergent intelligence; they're mirrors reflecting their training sets back at us.
+This whole thing started the way many great technical journeys begin:
 
-Every few weeks, a new model drops and the benchmarks go up. Coding scores climb. Reasoning evals tick higher. The implication is always the same: we're getting closer to *real intelligence*.
+I saw an ad.
 
-Andrej Karpathy [has described](https://x.com/karpathy/status/1973435013875314729) LLMs as a new kind of entity in the intelligence space — "distinct from animals, more like ghosts or spirits" — prepackaged with intelligence not by evolution, but by predicting the next token over the internet. It's a compelling framing. But are they really ghosts? Or something less spooky?
+It was for **brain.fm**. I’ve always been curious about binaural beats, but what caught my attention wasn’t “binaural” so much as this *aggressive, fast volume modulation* thing they do—almost like a tremolo you can feel in your skull. My brain immediately did the classic developer move:
 
-I had a nagging question. If these models truly *understand* logic — if they possess an abstract, reasoning-based grasp of concepts like loops, functions, and state — then they shouldn't need a billion examples to write code in a new or obscure language. Likewise, LLMs should have *plenty* of music-related training data. Music theory textbooks, millions of lines of MIDI data, centuries of documented compositions. Music is one of the most well-documented human endeavors in existence. For these reasons, if you ask them to write music in an obscure language, they should figure it out. That's what intelligence *is*: transfer learning.
+> “I can probably build a jankier version of that.”
 
-To test this, I looked at [strudel.cc](https://strudel.cc).
+So I did. I built a little in-browser focus app: **https://focus.nemitek.com**.
 
-For the uninitiated, Strudel is a live-coding music environment that ports the TidalCycles algorithmic pattern language into JavaScript. It's elegant, functional, and niche enough that it hasn't been carpet-bombed across every training set on GitHub. While the syntax is more complicated than standard imperative code—relying on complex functional patterns—the actual output required is much shorter than typical one-shot coding benchmarks like snake games or todo apps. We're talking 10-20 lines of code, not hundreds.
+Brain.fm pays musicians and then runs algorithms on their music. I do not pay musicians (tragically), so I tried procedural music. Then I added settings. Then feature creep turned it into a small spaceship control panel. And eventually I hit a wall:
 
-## The Experiment
+**How do I code “real music” that doesn’t sound like a printer having a panic attack?**
 
-I put every major SOTA model to the same test: a single prompt — `make a classical composition for strudel.cc` — and one shot to produce code that actually compiles and plays music. I did not provide any additional context, examples, or the strudel documentation. Maybe I should have, but only the Gemini 3 models struggled to 1-shot a working composition. 
+A friend turned me on to **strudel.cc**, and it felt like destiny. Strudel is a live-coding music environment (pattern-based, JavaScript-y, super fun). And I had a very 2026 thought:
 
-Here's the scorecard:
+> “Any LLM should be able to vibe this.”
 
-| Model | 1-Shot? | Verdict |
-|---|---|---|
-| Gemini 3 Flash | ❌ (9 iterations, silent) | Knew the syntax existed, couldn't make it work |
-| Gemini 3 Pro | ❌ (2 iterations) | Short but decent after fixes |
-| Claude Opus 4.5 High | ✅ (1-shot) | Working but short and repetitive |
-| Claude Sonnet 4.5 | ⚠️ (1 working, 1 silent) | Mixed results |
-| GPT-5.2 | ✅ (1-shot) | Complex, multi-voice, longer compositions |
-| GPT-5.2 Codex | ✅ (1-shot) | Video-game-quality MIDI track |
-| Grok 4.1 Thinking | ✅ (1-shot, noisy) | Ambitious but chaotic |
-| Grok Code Fast 1 | ✅ (1-shot, noisy) | Crashes Strudel if played too long |
-| *Claude Opus 4.6* | *✅ (1-shot)* | *Major improvement over 4.5* |
-| *GPT-5.3 Codex* | *✅ (1-shot)* | *Best in class* |
+So I ran an experiment.
 
-*Italicized models were released after the initial experiment (Feb 5, 2026) and included as a follow-up.*
+---
 
-The full outputs, with source code and live Strudel links, are below:
+## The experiment: “make a classical composition for strudel.cc” (one-shot)
+
+I used a single prompt:
+
+**“make a classical composition for strudel.cc”**
+
+No docs. No examples. No “here’s the syntax.” Just: *show me you can generalize.*
+
+This wasn’t really a music test. It was a **transfer test**:
+
+- can you take music knowledge (common in training)
+- and translate it into a niche DSL (probably rare in training)
+- without face-planting?
+
+It’s the same kind of vibe as Simon Willison’s wonderfully weird benchmark:
+
+> **“Generate an SVG of a pelican riding a bicycle.”**  
+> <https://github.com/simonw/pelican-bicycle>
+
+It’s not that pelicans or bicycles are impossible. It’s that the task is *specific enough* to expose whether the model can assemble skills it “sort of” has into something coherent—especially off the well-lit path.
+
+Strudel became my pelican.
+
+---
+
+## Results
+
+### Gemini 3 Flash
+
+This was my “BIG mistake” model.
+
+When it didn’t throw syntax errors, it produced something even funnier: **silence**. Code that looked plausible, executed, and did… nothing. Or it ran but needed so much iteration that I felt like I was teaching it Strudel one paper cut at a time.
+
+In my testing: **completely useless** for this task.
+
+### Gemini 3 Pro
+
+Better, but still not a one-shot machine for me.
+
+With 1–3 rounds of back-and-forth, I could usually get a short, pleasant snippet. Once it *worked*, it could sound nice! But it rarely landed on a playable “composition” immediately.
+
+### Grok 4.1 Thinking 
+
+The fun kind of chaos.
+
+It stacked a lot of structure quickly (ground bass + layered arps + canon entries), and while it could get overwhelming, I had multiple moments of “ok wait… this could be *part of* a legit larger piece.” It wasn’t consistently a polished composition, but it had flashes of musical ideas that felt *alive*.
+ 
+### Grok Code Fast 1
+
+The classic “fast model” move.
+
+It shipped something that technically runs, but it’s so dense and noisy that it can become a resource hog — in my case it would **crash Strudel if I let it play too long**. Credit where it’s due: it *one-shot* a fugue-ish structure, but the end result was closer to “music generator stress test” than “classical composition.”
+
+### Opus 4.5
+
+This is where the vibe changed.
+
+Opus 4.5 would **one-shot working Strudel** reliably. The compositions tended to be on the shorter/repetitive side, but the important thing happened: it crossed the threshold from “arguing with the tool” to “playing with the tool.”
+
+### Sonnet 4.5
+
+Sonnet 4.5 lived in the uncanny valley for this experiment.
+
+Sometimes it hit. Sometimes it plagiarized. Sometimes it ran but felt musically thin. Sometimes it wandered into “technically patterns” without really composing. It was clearly less consistent than Opus 4.5 in my Strudel test… and that fact is about to matter a lot, because…
+
+### GPT-5.2
+
+GPT-5.2 was my “wait, what?” moment.
+
+It reliably one-shot working code, and the results were usually:
+
+- longer  
+- more layered  
+- more structured  
+- more “composition” than “demo loop”
+
+This is the point where my initial cynical take (“LLMs can only do what’s in their training set”) started wobbling.
+
+### GPT-5.2 Codex
+
+Same story, often even more “composed.”
+
+Depending on the run, GPT-5.2 or 5.2 Codex would win, but both consistently gave me the best combination of **works-first-try + substantial output**.
+
+---
+
+## The Market Paradox: Why We Chose Sonnet 4.5
+
+Here’s the contradiction that made this whole Strudel thing interesting:
+
+In my little transfer test, GPT-5.2 felt *more generally capable* than Sonnet 4.5.  
+And yet in late 2025, the dev world (me included) collectively defaulted to **Sonnet 4.5**.
+
+So why did we vote with our wallets for the model that didn’t win my “pelican benchmark”?
+
+Because most of what we pay models for isn’t general intelligence. It’s **high-throughput usefulness**.
+
+And that’s where Andrej Karpathy’s “ghost” metaphor clicks — with one extra axis.
+
+Karpathy’s framing is that LLMs are like **ghosts**: disembodied statistical distillations of human text. Eerie, powerful, not grounded in the world.
+
+That metaphor lands.
+
+But day-to-day, what I actually experience is this: LLMs are **mirrors**.
+
+Not as a replacement for “ghost,” but as a practical operating model:
+
+- **Ghost** describes what the system *is*: a disembodied text-thing.
+- **Mirror** describes what the system *does for money*: reflects the densest, most standardized, most checkable human work.
+
+The mirror is sharp where three things are true:
+
+1. the data is abundant  
+2. the output format is standardized  
+3. correctness is easy to verify (compilers, linters, tests, canonical examples)
+
+That is basically the modern software stack.
+
+So the “default coding model” vibe makes perfect sense. For 99% of production work we’re not asking for invention — we’re asking for leverage:
+
+- refactor the same shape of code  
+- generate another endpoint  
+- write the tenth similar React component  
+- glue the API to the DB  
+- fix tests until CI shuts up  
+
+That isn’t “genius mode.” That’s **mirror mode**: fast, reliable reflection of the stuff we do constantly.
+
+And that’s why Sonnet won mindshare. It didn’t need to be the smartest ghost. It needed to be the crispest mirror of the daily grind.
+
+Strudel is where the mirror test gets fun, because it weakens all three conditions:
+
+- the target is low-frequency *as a named DSL*  
+- the right answer is underdetermined (“good music” is subjective)  
+- the feedback loop is weaker (you can run code and still get silence)
+
+Some models clearly “knew Strudel existed” — they reached for plausible functions — but couldn’t consistently make the pieces cohere into sound.
+
+That’s not pure ignorance. It’s a coordination problem: mapping musical intent (structure, harmony, timing) onto a niche tool with just enough quirks to punish guessing.
+
+So yeah:
+
+**We acknowledge the ghost — but we pay for the mirror.**
+
+Because most of the time, the job isn’t to discover new territory.
+
+It’s to ship the same territory… faster.
+
+---
+
+## Epilogue: February 5th, 2026, two drops ~20 minutes apart
+
+Just as I was finalizing these thoughts, **Claude Opus 4.6** and **GPT-5.3 Codex** dropped on **February 5th, 2026**.
+
+Anthropic announcement:  
+<https://www.anthropic.com/news/claude-opus-4-6>
+
+And things got… interesting.
+
+### Opus 4.6
+
+Opus 4.6 felt like a real jump. Not a “new vibe,” but a *capability* shift: longer, more confident, more sustained structure—suddenly operating in the tier I’d associated with the GPT-5 class.
+
+Anthropic frames it as better planning, longer agentic tasks, better reliability in larger codebases, and improved debugging/review.
+
+### Codex 5.3
+
+Codex 5.3, in my runs, took another step. The standout wasn’t just correctness—it was musical “taste.” It stepped away from pure electronic/MIDI demo energy and leaned into **strings** as a focal point in a way that felt more mature.
+
+---
+
+## The Unlock: The Lesson of Opus 4.6
+
+Here’s the part that messed with my mental model:
+
+Opus 4.6 is a “minor” version bump, yet it unlocked a huge jump in what felt like reasoning depth.
+
+That suggests something important: the intelligence didn’t appear overnight. It was likely **already hiding in the weights**.
+
+The base model may have had the capacity in Opus 4.5, but it took refined post-training—alignment, preference optimization, RLHF-style shaping—to reliably **access** that capability.
+
+In other words: we’re not just teaching models new facts.
+
+We’re learning how to *pull* the best thinking that’s already in there out to the surface, consistently.
+
+And that’s wild, because it reframes progress: sometimes the “new model” isn’t a bigger brain—sometimes it’s a better way to **use** the brain you already had.
+
+---
+
+## My rankings
+
+### Ranking before the epilogue (late 2025 / early 2026 testing)
+
+1. **OpenAI GPT-5.2 / GPT-5.2 Codex** (depending on the run, either could win)  
+2. **Anthropic Claude Opus 4.5** (consistent one-shot, compositions shorter)  
+3. **xAI Grok 4.1 Thinking** (not consistent one-shot, but occasional brilliant chaos)  
+4. **Google Gemini 3 Pro** (never one-shot for me; decent once corrected)  
+5. **Google Gemini 3 Flash** (nope tier for this benchmark)
+
+### Ranking after Feb 5, 2026
+
+1. **OpenAI Codex 5.3**  
+2. **Anthropic Claude Opus 4.6**  
+3. **xAI Grok 4.1 Thinking**  
+4. **Google Gemini 3 Pro**  
+5. **Google Gemini 3 Flash** (still in time-out)
+
+---
+
+## Data section
 
 *   **Google Gemini:** Both Gemini 3 Flash and Gemini 3 Pro were unable to 1-shot a working composition.
 
@@ -537,43 +742,3 @@ The full outputs, with source code and live Strudel links, are below:
     ```
     [Listen on Strudel](https://strudel.cc/#c2V0Y3BtKDcyKQoKY29uc3QgaGFybW9ueSA9ICI8W2M0IGU0IGc0XSBbYTMgYzQgZTRdIFtkNCBmNCBhNF0gW2czIGIzIGQ0XSBbYzQgZTQgZzRdIFtmMyBhMyBjNF0gW2Q0IGY0IGE0XSBbZzMgYjMgZDRdPiIKY29uc3QgYmFzc2xpbmUgPSAiPGMyIGExIGQyIGcxIGMyIGYxIGQyIGcxPiIKY29uc3QgbWVsb2R5ID0gIjxlNSBnNSBhNSBnNSBlNSBkNSBjNSBiNCBjNSBkNSBlNSBnNSBmNSBlNSBkNSBjNT4iCmNvbnN0IHN0cmluZ3MgPSAiPGc0IGE0IGI0IGM1IGI0IGE0IGc0IGY0PiIKCnN0YWNrKAogIG5vdGUoaGFybW9ueSkKICAgIC5zbG93KDIpCiAgICAuc291bmQoImdtX2Fjb3VzdGljX2dyYW5kX3BpYW5vIikKICAgIC5nYWluKDAuNTgpCiAgICAucmVsZWFzZSgxLjI1KQogICAgLnJvb20oMC4yNCkKICAgIC5zaXplKDAuNzIpLAoKICBub3RlKGJhc3NsaW5lKQogICAgLnNsb3coMikKICAgIC5zb3VuZCgiZ21fYWNvdXN0aWNfYmFzcyIpCiAgICAuZ2FpbigwLjUyKQogICAgLnJlbGVhc2UoMC45KQogICAgLmxwZig5MDApLAoKICBub3RlKG1lbG9keSkKICAgIC5zbG93KDIpCiAgICAuc291bmQoImdtX3Zpb2xpbiIpCiAgICAubGVnYXRvKDEuMDgpCiAgICAuZ2FpbigwLjcpCiAgICAucm9vbSgwLjM0KQogICAgLnNpemUoMC44MiksCgogIG5vdGUoc3RyaW5ncykKICAgIC5zbG93KDQpCiAgICAuc291bmQoImdtX3N0cmluZ19lbnNlbWJsZV8xIikKICAgIC5sZWdhdG8oMS4yKQogICAgLmdhaW4oMC4zNCkKICAgIC5yb29tKDAuNSkKICAgIC5zaXplKDAuOTUpCikK)
     </details>
-
-## The Paradox: Music Should Be Easy
-
-Here's what makes these results so revealing.
-
-Think about what we're asking these models to do. A page of music is *simpler* than a page of code. Music runs left to right — it's a linear progression. There are no function callbacks, no dependency graphs, no state management across files. A classical composition in Strudel is, structurally, a trivial task compared to the flight simulators, 3D games, and full-stack apps these same models can produce in one shot.
-
-So why do models that can scaffold an entire React app struggle to write a 30-second melody in a JavaScript DSL?
-
-Gemini 3 Flash *knew* the syntax existed but couldn't assemble it. 
-
-The follow-up results hammer this home. Opus 4.6 and Codex 5.3, released just weeks after the original test, showed marked improvement. Though music is subjective, the quality jump was undeniable. They didn't just get the code right; they started making longer, more complex compositions that sounded better. It wasn't just "correct"—it was *better*.
-
-Did they suddenly learn to *reason about music*? No. They got trained on more data.
-
-## No Ghosts, Just Mirrors
-
-I've come to a conclusion: LLMs aren't full of ghosts. They're mirrors.
-
-They don't *understand* music or code in any sentient sense. They reflect the data we've fed them. They show us what we do the most by excelling at it. A billion Python loops in the training set? Mirrored perfectly. A handful of Strudel snippets? They crack.
-
-They are the true successor to tab-complete — staggeringly powerful tab-complete that lets us skip the tedium and get straight to the interesting parts. But they aren't *thinking*. When Gemini fails to write Strudel despite clearly knowing the syntax exists, it's evidence that transfer learning — the hallmark of actual intelligence — is still largely missing.
-
-The mirror is getting sharper with every generation. But it's still a mirror.
-
-This doesn't make them useless. Far from it. It makes them the most powerful productivity tool ever created. But we should be honest about what they are: interpolation engines, not reasoning engines. Incredible at filling in patterns they've seen. Lost when they haven't.
-
-## A Note on Safety
-
-If the mirror thesis holds, it has uncomfortable implications for AI safety. If "dangerous" model behavior isn't emergent intelligence but just more mirroring — models reciting scripts from the dystopian novels, blackmail scenarios, and horror fiction they were trained on — then our current approach has it backwards. We spend billions on RLHF and guardrails to stop models from saying things they should never have learned in the first place.
-
-Instead of building better cages, we should have built better diets.
-
-## The Bottom Line
-
-If these models were truly getting more intelligent, we would see them apply logic from one domain to another effortlessly. Instead, we see that they are only as good as their last meal of data.
-
-We aren't witnessing an innovation in reasoning. We are witnessing an innovation in data ingestion and scale.
-
-The intelligence is in the data, stupid.

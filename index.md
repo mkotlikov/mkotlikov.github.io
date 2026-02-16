@@ -5,19 +5,16 @@ Thoughts and insights about technology, software development, and more.
 ### The Darkest Knight: A Batman Fan Fiction
 *Michael Kotlikov - February 15, 2026*
 
+### The Mirror Economy: Why We Pay LLMs to Imitate Us
+*Michael Kotlikov - February 16, 2026*
+
+LLMs aren’t paid to be smart — they’re paid to be useful. We buy the best mirror of boring work, not the best explorer off-road. A look at the Strudel benchmark and what it tells us about the "Ghost" vs "Mirror" distinction.
+
+[Read more](./posts/2026-02-16-the-mirror-economy-why-we-pay-llms-to-imitate-us.md)
+
 A gritty look at Gotham's corporate corruption and the reality of the Batman's role in the city's hierarchy.
 
 [Read more](./posts/2026-02-15-the-darkest-knight-a-batman-fan-fiction.md)
-
-<!--
-### Mirrors, Not Ghosts: The Intelligence is in the Data, Stupid
-*Michael Kotlikov - February 14, 2026*
-
-Are LLMs actually intelligent, or just high-tech mirrors? A look at how they fail at simple pattern languages like Strudel and what that means for AI safety.
-
-[Read more](./posts/2026-02-14-mirrors-not-ghosts-the-intelligence-is-in-the-data-stupid.md)
--->
-
 
 ### Doombuilding - Welcome to the era of TikTok for apps
 *Michael Kotlikov - February 1, 2026*
