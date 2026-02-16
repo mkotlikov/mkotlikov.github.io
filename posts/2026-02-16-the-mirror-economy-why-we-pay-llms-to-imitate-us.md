@@ -7,6 +7,8 @@ categories: [ai, llms, music, coding]
 tags: [strudel, brainfm, gpt, claude, gemini, grok, benchmarks]
 ---
 
+*Michael Kotlikov - February 16, 2026*
+
 > **TL;DR:** LLMs aren’t paid to be smart — they’re paid to be useful. But if you rank “general intelligence” by my [Strudel](https://strudel.cc) one-shot benchmark: Codex 5.3 sits at the top, Opus 4.6 is a close second, Grok 4.1 flashes brilliance with chaos, Gemini 3 Pro needs coaching — while the smaller “frontier” models mostly can’t make the jump: they look right, but they don’t work.
 
 This whole thing started the way many great technical journeys begin:
@@ -52,7 +54,7 @@ It’s the same kind of vibe as Simon Willison’s wonderfully weird benchmark:
 
 It’s not that pelicans or bicycles are impossible. It’s that the task is *specific enough* to expose whether the model can assemble skills it “sort of” has into something coherent—especially off the well-lit path.
 
-Strudel became my pelican.
+[Strudel](https://strudel.cc) became my pelican.
 
 ---
 
