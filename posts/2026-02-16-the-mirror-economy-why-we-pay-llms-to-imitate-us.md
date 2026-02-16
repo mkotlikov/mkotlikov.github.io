@@ -7,7 +7,7 @@ categories: [ai, llms, music, coding]
 tags: [strudel, brainfm, gpt, claude, gemini, grok, benchmarks]
 ---
 
-> **TL;DR:** LLMs aren’t paid to be smart — they’re paid to be useful. We buy the best mirror of boring work, not the best explorer off-road. But if you rank “general intelligence” by my Strudel one-shot benchmark: Codex 5.3 sits at the top, Opus 4.6 is a close second, Grok 4.1 flashes brilliance with chaos, Gemini 3 Pro needs coaching — while the smaller “frontier” models mostly can’t make the jump: they look right, but they don’t work.
+> **TL;DR:** LLMs aren’t paid to be smart — they’re paid to be useful. But if you rank “general intelligence” by my Strudel one-shot benchmark: Codex 5.3 sits at the top, Opus 4.6 is a close second, Grok 4.1 flashes brilliance with chaos, Gemini 3 Pro needs coaching — while the smaller “frontier” models mostly can’t make the jump: they look right, but they don’t work.
 
 This whole thing started the way many great technical journeys begin:
 
