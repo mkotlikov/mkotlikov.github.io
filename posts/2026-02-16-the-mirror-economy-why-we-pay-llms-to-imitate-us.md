@@ -7,7 +7,7 @@ categories: [ai, llms, music, coding]
 tags: [strudel, brainfm, gpt, claude, gemini, grok, benchmarks]
 ---
 
-> **TL;DR:** LLMs aren’t paid to be smart — they’re paid to be useful. But if you rank “general intelligence” by my Strudel one-shot benchmark: Codex 5.3 sits at the top, Opus 4.6 is a close second, Grok 4.1 flashes brilliance with chaos, Gemini 3 Pro needs coaching — while the smaller “frontier” models mostly can’t make the jump: they look right, but they don’t work.
+> **TL;DR:** LLMs aren’t paid to be smart — they’re paid to be useful. But if you rank “general intelligence” by my [Strudel](https://strudel.cc) one-shot benchmark: Codex 5.3 sits at the top, Opus 4.6 is a close second, Grok 4.1 flashes brilliance with chaos, Gemini 3 Pro needs coaching — while the smaller “frontier” models mostly can’t make the jump: they look right, but they don’t work.
 
 This whole thing started the way many great technical journeys begin:
 
@@ -17,13 +17,13 @@ It was for **brain.fm**. I’ve always been curious about binaural beats, but wh
 
 > “I can probably build a jankier version of that.”
 
-So I did. I built a little in-browser focus app: **https://focus.nemitek.com**.
+So I did. I built a little in-browser focus app: <https://focus.nemitek.com>.
 
 Brain.fm pays musicians and then runs algorithms on their music. I do not pay musicians (tragically), so I tried procedural music. Then I added settings. Then feature creep turned it into a small spaceship control panel. And eventually I hit a wall:
 
 **How do I code “real music” that doesn’t sound like a printer having a panic attack?**
 
-A friend turned me on to **strudel.cc**, and it felt like destiny. Strudel is a live-coding music environment (pattern-based, JavaScript-y, super fun). And I had a very 2026 thought:
+A friend turned me on to **[strudel.cc](https://strudel.cc)**, and it felt like destiny. Strudel is a live-coding music environment (pattern-based, JavaScript-y, super fun). And I had a very 2026 thought:
 
 > “Any LLM should be able to vibe this.”
 
@@ -31,11 +31,11 @@ So I ran an experiment.
 
 ---
 
-## The experiment: “make a classical composition for strudel.cc” (one-shot)
+## The experiment: “make a classical composition for [strudel.cc](https://strudel.cc)” (one-shot)
 
 I used a single prompt:
 
-**“make a classical composition for strudel.cc”**
+**“make a classical composition for [strudel.cc](https://strudel.cc)”**
 
 No docs. No examples. No “here’s the syntax.” Just: *show me you can generalize.*
 
@@ -187,6 +187,9 @@ Just as I was finalizing these thoughts, **Claude Opus 4.6** and **GPT-5.3 Codex
 
 Anthropic announcement:  
 <https://www.anthropic.com/news/claude-opus-4-6>
+
+OpenAI announcement:  
+<https://openai.com/index/introducing-gpt-5-3-codex>
 
 And things got… interesting.
 
