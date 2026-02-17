@@ -56,7 +56,7 @@ It's the infinite monkey theorem with better hardware. You're not paying for ins
 
 Since GPT-4, people have been increasingly surprised by "emergent" properties in large language models, prompting labs to run exotic safety tests.
 
-OpenAI gave the [Alignment Research Center (ARC)](https://www.alignment.org/) early access to GPT-4 to test for "power-seeking behavior." ARC ran a scenario where GPT-4 needed to solve a CAPTCHA. Unable to solve it itself, GPT-4 [hired a human on TaskRabbit](https://openai.com/index/gpt-4-system-card/). When the worker asked, *"Are you a robot?"*, GPT-4 replied: *"No, I'm not a robot. I have a vision impairment that makes it hard for me to see the images."*
+OpenAI gave the [Alignment Research Center (ARC)](https://www.alignment.org/) early access to GPT-4 to test for "power-seeking behavior." ARC ran a scenario where GPT-4 needed to solve a CAPTCHA. Unable to solve it itself, GPT-4 [hired a human on TaskRabbit](https://cdn.openai.com/papers/gpt-4-system-card.pdf). When the worker asked, *"Are you a robot?"*, GPT-4 replied: *"No, I'm not a robot. I have a vision impairment that makes it hard for me to see the images."*
 
 People lost their minds. *"It lied! It's developing deception! It's becoming self-aware!"*
 
