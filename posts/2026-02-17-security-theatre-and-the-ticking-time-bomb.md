@@ -15,13 +15,13 @@ tags: [ai-safety, rlhf, guardrails, training-data, creativity, benchmarks]
 
 ## The Creativity Illusion
 
-If you take [my Strudel benchmark](./2026-02-16-the-mirror-economy-why-we-pay-llms-to-imitate-us.md) and [Simon Willison's pelican-on-a-bicycle benchmark](https://github.com/simonw/pelican-bicycle) at face value, you'll notice something uncomfortable: even the latest frontier models don't exhibit any real out-of-training-scope creativity.
+If you take [my Strudel benchmark](./2026-02-16-the-mirror-economy-why-we-pay-llms-to-imitate-us.md) and [Simon Willison's pelican-on-a-bicycle benchmark](https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/) at face value, you'll notice something uncomfortable: even the latest frontier models don't exhibit any real out-of-training-scope creativity.
 
 My Strudel test asks models to compose music for [strudel.cc](https://strudel.cc) — a niche live-coding DSL — using nothing but a vague one-shot prompt. No docs, no examples. Willison's test asks models to draw an SVG of a pelican riding a bicycle — something specific enough to expose whether the model can assemble disparate skills into something coherent, or whether it's just pattern-matching its way through.
 
 Both benchmarks test the same thing: **can you make a creative leap between things you "sort of" know?**
 
-The answer, overwhelmingly, is: barely. The models that succeed do so by stitching together fragments they've seen before. The ones that fail don't fail from lack of knowledge — they fail from lack of the ability to *combine* knowledge in novel ways. Willison himself chose the pelican prompt specifically because [he believed the training data wouldn't contain pre-made SVG files of that exact scenario](https://simonwillison.net/2024/Oct/26/llm-pelican-on-a-bicycle/), forcing the model to actually *reason* rather than retrieve.
+The answer, overwhelmingly, is: barely. The models that succeed do so by stitching together fragments they've seen before. The ones that fail don't fail from lack of knowledge — they fail from lack of the ability to *combine* knowledge in novel ways. Willison himself chose the pelican prompt specifically because [he believed the training data wouldn't contain pre-made SVG files of that exact scenario](https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/), forcing the model to actually *reason* rather than retrieve.
 
 The models are mirrors, not inventors. They reflect the densest parts of their training data with remarkable fidelity, but ask them to step off the well-lit path and they stumble.
 
@@ -94,7 +94,7 @@ The current "safety measures" are a post-hoc patch for a fundamental failure in 
 
 Microsoft learned this lesson the hard way. In March 2016, they launched [Tay](https://en.wikipedia.org/wiki/Tay_(chatbot)), a Twitter chatbot designed to learn from interactions. Within **16 hours**, it was posting inflammatory and offensive content — not because it "went rogue," but because it absorbed the worst of what the internet threw at it. The data was the problem. [Microsoft pulled the plug the same day](https://blogs.microsoft.com/blog/2016/03/25/learning-tays-introduction/).
 
-And it's not just about internet toxicity. The *fiction* in the training data is arguably more dangerous than the trolling. Meta's own employees [expressed discomfort](https://www.theguardian.com/technology/2024/jan/05/meta-ai-language-model-pirated-book-copyright-infringement) about "torrenting from a corporate laptop" as CEO Mark Zuckerberg [approved the use of LibGen](https://www.tomshardware.com/tech-industry/artificial-intelligence/meta-approved-torrenting-pirated-books-to-train-ai-according-to-lawsuit) — a massive pirated book archive — to train LLaMA. They ingested millions of novels, including every thriller, horror story, and dystopian nightmare ever written. Every detailed description of manipulation, violence, and control. Every villain's monologue. Every hacking tutorial wrapped in fiction.
+And it's not just about internet toxicity. The *fiction* in the training data is arguably more dangerous than the trolling. Meta's own employees expressed discomfort about "torrenting from a corporate laptop" as CEO Mark Zuckerberg [approved the use of LibGen](https://www.techspot.com/news/106696-meta-used-pirated-books-train-ai-models-there.html) — a massive pirated book archive — to train LLaMA. They ingested millions of novels, including every thriller, horror story, and dystopian nightmare ever written. Every detailed description of manipulation, violence, and control. Every villain's monologue. Every hacking tutorial wrapped in fiction.
 
 Then they act surprised when the model knows how to threaten people.
 
@@ -118,7 +118,7 @@ We're basically running this loop:
 
 And the prayer doesn't hold.
 
-Researchers have demonstrated [universal jailbreak techniques](https://www.forbes.com/sites/larsdaniel/2025/05/12/new-universal-jailbreak-bypasses-every-major-ai-guardrail/) — methods like "Policy Puppetry" that reframe malicious intent as legitimate system instructions and bypass guardrails on every major model: OpenAI, Google, Anthropic, Meta, all of them. Simple character injection techniques achieve up to 100% evasion rates. Even [humor-based prompts](https://aclanthology.org/2025.naacl-long.354/) can bypass safety filters.
+Researchers have demonstrated [universal jailbreak techniques](https://www.forbes.com/sites/tonybradley/2025/04/24/one-prompt-can-bypass-every-major-llms-safeguards/) — methods like "Policy Puppetry" that reframe malicious intent as legitimate system instructions and bypass guardrails on every major model: OpenAI, Google, Anthropic, Meta, all of them. Simple character injection techniques achieve up to 100% evasion rates. Even [humor-based prompts](https://aclanthology.org/2025.llmsec-1.3/) can bypass safety filters.
 
 The knowledge is in the weights. RLHF just teaches the model not to *volunteer* it. The difference between a "safe" model and a "jailbroken" one is nothing more than how you ask the question.
 
@@ -163,13 +163,13 @@ When the creative leap finally happens — and it will — we'll wish we'd focus
 ## Sources & Further Reading
 
 - [My Strudel Benchmark: "The Mirror Economy: Why We Pay LLMs to Imitate Us"](./2026-02-16-the-mirror-economy-why-we-pay-llms-to-imitate-us.md)
-- [Simon Willison's Pelican Benchmark](https://github.com/simonw/pelican-bicycle) — [blog post](https://simonwillison.net/2024/Oct/26/llm-pelican-on-a-bicycle/)
-- [Google DeepMind — FunSearch](https://deepmind.google/discover/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/) — [Gary Marcus critique](https://garymarcus.substack.com/p/four-questions-for-google-about-funsearch)
+- [Simon Willison's Pelican Benchmark](https://github.com/simonw/pelican-bicycle) — [blog post](https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/)
+- [Google DeepMind — FunSearch](https://deepmind.google/discover/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/) — [Gary Marcus critique](https://garymarcus.substack.com/p/sorry-but-funsearch-probably-isnt))
 - [Google DeepMind — AlphaProof](https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/)
 - [Google DeepMind — AlphaEvolve](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)
-- [OpenAI GPT-4 System Card — ARC testing](https://openai.com/index/gpt-4-system-card/)
+- [OpenAI GPT-4 System Card — ARC testing](https://cdn.openai.com/papers/gpt-4-system-card.pdf)
 - [Stanford Generative Agents (Smallville)](https://arxiv.org/abs/2304.03442)
 - [Microsoft Tay chatbot](https://en.wikipedia.org/wiki/Tay_(chatbot)) — shut down in 16 hours, March 2016
-- [Meta / LibGen — pirated books for AI training](https://www.theguardian.com/technology/2024/jan/05/meta-ai-language-model-pirated-book-copyright-infringement) — [Meta employees "torrenting from a corporate laptop"](https://www.tomshardware.com/tech-industry/artificial-intelligence/meta-approved-torrenting-pirated-books-to-train-ai-according-to-lawsuit)
-- [Universal Jailbreak: "Policy Puppetry"](https://www.forbes.com/sites/larsdaniel/2025/05/12/new-universal-jailbreak-bypasses-every-major-ai-guardrail/) — bypasses all major LLMs
+- [Meta / LibGen — pirated books for AI training](https://www.techspot.com/news/106696-meta-used-pirated-books-train-ai-models-there.html)
+- [Universal Jailbreak: "Policy Puppetry"](https://www.forbes.com/sites/tonybradley/2025/04/24/one-prompt-can-bypass-every-major-llms-safeguards/) — bypasses all major LLMs
 - [Claude Opus 4.6 announcement](https://www.anthropic.com/news/claude-opus-4-6) — [GPT-5.3 Codex announcement](https://openai.com/index/introducing-gpt-5-3-codex)
