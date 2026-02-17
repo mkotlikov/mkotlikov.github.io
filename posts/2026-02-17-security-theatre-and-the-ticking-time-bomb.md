@@ -9,7 +9,7 @@ tags: [ai-safety, rlhf, guardrails, training-data, creativity, benchmarks]
 
 *Michael Kotlikov - February 17, 2026*
 
-> **TL;DR:** Frontier LLMs still can't create anything genuinely new — every claimed "discovery" is either retracted or the product of brute-force search with a verifier. Their scary "emergent" behaviors aren't emergent at all; they're just regurgitating the dystopian fiction we fed them. Our entire approach to AI safety is backwards: instead of building guardrails around models that already know how to be dangerous, we should have pruned the poison from the training data. And as models slowly get smarter, the guardrails will break before the knowledge does. That's the ticking time bomb.
+> **TL;DR:** Today's AI safety is theatre. Models aren't creative enough to be truly dangerous — their scary "emergent" behaviors are just training data on replay. But we've loaded them with every dangerous idea humanity has ever written, and the only thing between us and that knowledge is RLHF — a thin behavioral veneer that researchers keep proving can be bypassed with a clever prompt. The real problem: models are getting creative fast, in sudden jumps we can't predict. When they're finally smart enough to *use* what they know, the guardrails won't hold. We should be pruning the training data now, not building bigger cages around models that already know everything dangerous. That's the ticking time bomb.
 
 ---
 

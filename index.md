@@ -5,7 +5,7 @@ Thoughts and insights about technology, software development, and more.
 ### Security Theatre and the Ticking Time Bomb
 *Michael Kotlikov - February 17, 2026*
 
-Frontier LLMs still can't create anything genuinely new — and their scary "emergent" behaviors are just regurgitated training data. Our entire approach to AI safety is backwards.
+Today's AI safety is theatre — "emergent" behaviors are just training data on replay. But models are gaining creativity in sudden, unpredictable jumps, and we've already loaded them with everything dangerous. The guardrails won't hold.
 
 [Read more](./posts/2026-02-17-security-theatre-and-the-ticking-time-bomb.md)
 
