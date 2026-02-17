@@ -1,3 +1,12 @@
+---
+layout: post
+title: "The Darkest Knight: A Batman Fan Fiction"
+date: 2026-02-15
+author: Michael Kotlikov
+categories: [fiction, creative-writing]
+tags: [batman, gotham, fan-fiction, short-story, corporate-corruption]
+---
+
 # The Darkest Knight: A Batman Fan Fiction
 
 *Michael Kotlikov - February 15, 2026*

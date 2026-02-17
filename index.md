@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Michael Kotlikov's Blog"
+permalink: /
+---
+
 Thoughts and insights about technology, software development, and more.
 
 ## Latest Posts

@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Deep Dive: The KotliCluster Algorithm"
+date: 2025-11-23
+author: Michael Kotlikov
+categories: [data-science, algorithms, machine-learning]
+tags: [clustering, cosine-similarity, k-means, dbscan, embeddings, kotlicluster]
+---
+
 # Deep Dive: The KotliCluster Algorithm
 
 *Michael Kotlikov - November 23, 2025*

@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Gravity: The \"Fun\" Patch (And Why It's Full of Bugs)"
+date: 2025-12-01
+author: Michael Kotlikov
+categories: [physics, philosophy, simulation]
+tags: [gravity, dark-matter, simulation-hypothesis, standard-model, game-development]
+---
+
 # Gravity: The "Fun" Patch (And Why It’s Full of Bugs)
 
 *Michael Kotlikov - December 1, 2025*

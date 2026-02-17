@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Doombuilding - Welcome to the Era of TikTok for Apps"
+date: 2026-02-01
+author: Michael Kotlikov
+categories: [ai, software-development, culture]
+tags: [generative-ai, jevons-paradox, productivity, doombuilding, coding]
+---
+
 # Doombuilding - Welcome to the era of TikTok for apps
 
 *Michael Kotlikov - February 1, 2026*

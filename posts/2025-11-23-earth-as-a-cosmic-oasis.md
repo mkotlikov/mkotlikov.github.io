@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Earth as a Cosmic Oasis"
+date: 2025-11-23
+author: Michael Kotlikov
+categories: [science, philosophy, astrobiology]
+tags: [fermi-paradox, origin-of-life, extremophiles, astrobiology, simulation]
+---
+
 # Earth as a Cosmic Oasis
 
 *Michael Kotlikov - November 23, 2025*

@@ -1,3 +1,12 @@
+---
+layout: post
+title: "The Great \"Tronics\" Mania: A Warning on the EDP Delusion"
+date: 2025-11-23
+author: Michael Kotlikov
+categories: [satire, technology, history]
+tags: [speculation, market-bubbles, edp, ibm, retro, 1960s]
+---
+
 # The Great "Tronics" Mania: A Warning on the EDP Delusion
 
 *Sensible Business Analyst - November 1965*

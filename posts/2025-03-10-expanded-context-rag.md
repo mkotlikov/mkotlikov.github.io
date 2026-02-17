@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Expanded-Context RAG: Enhancing Semantic Search and Contextual Retrieval"
+date: 2025-03-10
+author: Michael Kotlikov
+categories: [ai, rag, information-retrieval]
+tags: [rag, semantic-search, embeddings, llm, hallucination, context-window]
+---
+
 # Expanded-Context RAG: Enhancing Semantic Search and Contextual Retrieval
 
 *Michael Kotlikov - March 10, 2025*

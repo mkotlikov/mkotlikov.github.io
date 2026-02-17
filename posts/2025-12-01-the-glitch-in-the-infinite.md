@@ -1,3 +1,12 @@
+---
+layout: post
+title: "The Glitch in the Infinite: Why Sacred Geometry Might Be the Universe's Source Code"
+date: 2025-12-01
+author: Michael Kotlikov
+categories: [physics, philosophy, simulation]
+tags: [sacred-geometry, procedural-generation, simulation-hypothesis, fine-structure-constant, fractals]
+---
+
 # The Glitch in the Infinite: Why Sacred Geometry Might Be the Universe’s Source Code
 
 *Michael Kotlikov - December 1, 2025*
