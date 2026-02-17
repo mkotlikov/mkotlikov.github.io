@@ -3,11 +3,11 @@ Thoughts and insights about technology, software development, and more.
 ## Latest Posts
 
 ### Security Theatre and the Ticking Time Bomb
-*Michael Kotlikov - February 16, 2026*
+*Michael Kotlikov - February 17, 2026*
 
 Frontier LLMs still can't create anything genuinely new — and their scary "emergent" behaviors are just regurgitated training data. Our entire approach to AI safety is backwards.
 
-[Read more](./posts/2026-02-16-security-theatre-and-the-ticking-time-bomb.md)
+[Read more](./posts/2026-02-17-security-theatre-and-the-ticking-time-bomb.md)
 
 ### The Mirror Economy: Why We Pay LLMs to Imitate Us
 *Michael Kotlikov - February 16, 2026*

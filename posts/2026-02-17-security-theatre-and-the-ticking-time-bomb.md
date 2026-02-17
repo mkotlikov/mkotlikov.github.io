@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Security Theatre and the Ticking Time Bomb"
-date: 2026-02-16
+date: 2026-02-17
 author: Michael Kotlikov
 categories: [ai, safety, llms]
 tags: [ai-safety, rlhf, guardrails, training-data, creativity, benchmarks]
 ---
 
-*Michael Kotlikov - February 16, 2026*
+*Michael Kotlikov - February 17, 2026*
 
 > **TL;DR:** Frontier LLMs still can't create anything genuinely new — every claimed "discovery" is either retracted or the product of brute-force search with a verifier. Their scary "emergent" behaviors aren't emergent at all; they're just regurgitating the dystopian fiction we fed them. Our entire approach to AI safety is backwards: instead of building guardrails around models that already know how to be dangerous, we should have pruned the poison from the training data. And as models slowly get smarter, the guardrails will break before the knowledge does. That's the ticking time bomb.
 
