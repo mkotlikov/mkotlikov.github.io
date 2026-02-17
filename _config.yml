@@ -2,6 +2,7 @@
 title: Michael Kotlikov's Blog
 description: Thoughts and insights about technology and software development
 author: Michael Kotlikov
+repository: mkotlikov/mkotlikov.github.io
 
 # Build settings
 theme: jekyll-theme-primer  # Changed to a theme without sidebar

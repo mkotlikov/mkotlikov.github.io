@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+    
+    <style>
+      :root {
+        --color-bg: #ffffff;
+        --color-text: #24292e;
+        --color-link: #0366d6;
+        --color-border: #e1e4e8;
+        --color-code-bg: #f6f8fa;
+      }
+      
+      [data-theme="dark"] {
+        --color-bg: #0d1117;
+        --color-text: #c9d1d9;
+        --color-link: #58a6ff;
+        --color-border: #30363d;
+        --color-code-bg: #161b22;
+      }
+      
+      body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        transition: background-color 0.3s, color 0.3s;
+      }
+      
+      a {
+        color: var(--color-link);
+      }
+      
+      .markdown-body {
+        color: var(--color-text) !important;
+        background-color: var(--color-bg) !important;
+      }
+
+      /* Dark mode specific overrides for markdown-body */
+      [data-theme="dark"] .markdown-body a {
+        color: var(--color-link);
+      }
+      
+      [data-theme="dark"] .markdown-body pre, 
+      [data-theme="dark"] .markdown-body code {
+        background-color: var(--color-code-bg);
+        border: 1px solid var(--color-border);
+      }
+
+      .theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+        padding: 5px;
+        border-radius: 50%;
+        transition: transform 0.2s;
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      }
+      
+      .theme-toggle:hover {
+        transform: scale(1.1);
+      }
+    </style>
+
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        const theme = savedTheme || systemTheme;
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="theme-icon-light">☀️</span>
+      <span class="theme-icon-dark" style="display:none;">🌙</span>
+    </button>
+
+    <div class="container-lg px-3 my-5 markdown-body">
+      {% if site.title and site.title != page.title %}
+      <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
+      {% endif %}
+
+      {{ content }}
+
+      {% if site.github.private != true and site.github.license %}
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. {% github_edit_link "Improve this page" %}.
+      </div>
+      {% endif %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+    <script>
+      const toggleButton = document.getElementById('theme-toggle');
+      const lightIcon = toggleButton.querySelector('.theme-icon-light');
+      const darkIcon = toggleButton.querySelector('.theme-icon-dark');
+      
+      function updateIcon(theme) {
+        if (theme === 'dark') {
+          lightIcon.style.display = 'none';
+          darkIcon.style.display = 'inline';
+        } else {
+          lightIcon.style.display = 'inline';
+          darkIcon.style.display = 'none';
+        }
+      }
+      
+      // Initialize icon
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      updateIcon(currentTheme);
+      
+      toggleButton.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateIcon(newTheme);
+      });
+    </script>
+  </body>
+</html>
