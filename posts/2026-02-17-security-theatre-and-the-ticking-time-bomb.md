@@ -132,7 +132,7 @@ Everything I've argued so far is predicated on the idea that current models are 
 
 But the models are getting more creative.
 
-Look at my own Strudel benchmark. Between Claude Opus 4.5 and [Opus 4.6](https://www.anthropic.com/news/claude-opus-4-6) — a "minor" version bump — there was a **massive jump** in what felt like reasoning depth and creative ability. Opus 4.5 could one-shot short, repetitive Strudel compositions. Opus 4.6 suddenly produced multi-voice, structurally complex pieces that rivaled what GPT-5.2 was doing. The intelligence didn't appear overnight — it was likely already hiding in the weights, unlocked by better post-training.
+Look at my own Strudel benchmark. Between Claude Opus 4.5 and Opus 4.6 — a "minor" version bump — there was a **massive jump** in what felt like reasoning depth and creative ability. Opus 4.5 could one-shot short, repetitive Strudel compositions. Opus 4.6 suddenly produced multi-voice, structurally complex pieces that rivaled what GPT-5.2 was doing. The intelligence didn't appear overnight — it was likely already hiding in the weights, unlocked by better post-training.
 
 The jump was **sudden**. Not gradual. Sudden.
 
@@ -144,7 +144,7 @@ One day, we wake up and the models are *actually* creative. They can make the le
 
 And when that day comes, RLHF won't save us.
 
-Because there's always a jailbreak prompt. The knowledge is already in the weights — every bioweapon synthesis route, every manipulation technique, every attack vector. The only thing standing between a "safe" model and an unsafe one is a thin layer of behavioral conditioning that researchers have already shown can be bypassed with [simple prompt engineering](https://arxiv.org/abs/2502.09956).
+Because there's always a jailbreak prompt. The knowledge is already in the weights — every bioweapon synthesis route, every manipulation technique, every attack vector. The only thing standing between a "safe" model and an unsafe one is a thin layer of behavioral conditioning that researchers have already shown can be bypassed with simple prompt engineering.
 
 Right now, it doesn't matter much, because the models aren't smart enough to be truly dangerous independently. They can retrieve dangerous information, sure, but so can Google. The danger isn't in retrieval — it's in *application*, in creativity, in the ability to combine knowledge into novel attack strategies.
 
