@@ -164,7 +164,7 @@ When the creative leap finally happens — and it will — we'll wish we'd focus
 
 - [My Strudel Benchmark: "The Mirror Economy: Why We Pay LLMs to Imitate Us"](./2026-02-16-the-mirror-economy-why-we-pay-llms-to-imitate-us.md)
 - [Simon Willison's Pelican Benchmark](https://github.com/simonw/pelican-bicycle) — [blog post](https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/)
-- [Google DeepMind — FunSearch](https://deepmind.google/discover/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/) — [Gary Marcus critique](https://garymarcus.substack.com/p/sorry-but-funsearch-probably-isnt))
+- [Google DeepMind — FunSearch](https://deepmind.google/discover/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/) — [Gary Marcus critique](https://garymarcus.substack.com/p/sorry-but-funsearch-probably-isnt)
 - [Google DeepMind — AlphaProof](https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/)
 - [Google DeepMind — AlphaEvolve](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)
 - [OpenAI GPT-4 System Card — ARC testing](https://cdn.openai.com/papers/gpt-4-system-card.pdf)
