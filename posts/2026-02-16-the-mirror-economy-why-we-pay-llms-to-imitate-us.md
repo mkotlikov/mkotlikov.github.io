@@ -25,7 +25,7 @@ So I did. I built a little in-browser focus app: <https://focus.nemitek.com>.
 
 **How do I code “real music” that doesn’t sound like a printer having a panic attack?**
 
-A friend turned me on to **[strudel.cc](https://strudel.cc)**, and it felt like destiny. Strudel is a live-coding music environment (pattern-based, JavaScript-y, super fun). And I had a very 2026 thought:
+[Keir Miron](https://www.keirmiron.com/) turned me on to **[strudel.cc](https://strudel.cc)**, and it felt like destiny. Strudel is a live-coding music environment (pattern-based, JavaScript-y, super fun). And I had a very 2026 thought:
 
 > “Any LLM should be able to vibe this.”
 
