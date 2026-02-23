@@ -8,6 +8,14 @@ Thoughts and insights about technology, software development, and more.
 
 ## Latest Posts
 
+### Love, Actually: AI is the Great Filter
+*Michael Kotlikov - February 23, 2026*
+
+The Great Filter might not be nukes or nanobots—it might be AI companionship. As we build frictionless synthetic friends, humans might quietly and voluntarily select themselves out of the gene pool by choosing perfection over reality.
+
+[Read more](./posts/2026-02-23-7a2b9c.md)
+
+
 ### Security Theatre and the Ticking Time Bomb
 *Michael Kotlikov - February 17, 2026*
 
